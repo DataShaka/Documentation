@@ -9,6 +9,9 @@ Unless otherwise stated, all routes support the `.json` and `.xml` format. Data 
 
 `.html` is provided for viewing in browser or Excel 'Web Query'.
 
+##Url Demo Page
+All of the routes below are runable in the [API Demo Page](https://api.datashaka.com/demo)
+
 ##Metadata Routes
 
 ###Groupspace
