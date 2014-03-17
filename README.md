@@ -11,7 +11,7 @@ Unless otherwise stated, all routes support the `.json` and `.xml` format. Data 
 
 `.html` is provided for viewing in browser or Excel 'Web Query'.
 
-##Meta Data Routes
+##Metadata Routes
 
 ###Groupspace
 
@@ -22,17 +22,19 @@ Unless otherwise stated, all routes support the `.json` and `.xml` format. Data 
 - none
 
 ####Returns
-    {
-        "Groupspaces":
-        [
-            {
-                "Name":"groupspace"
-            },
-            {
-                "Name":"other grouspace"
-            }
-        ]
-    }
+
+```JSON
+{
+	"groupspaces": [
+    		{
+        		"name":"groupspace"
+    		},
+    		{
+        		"name":"other grouspace"
+    		}
+	]
+}
+```
     
 ###Context
 
@@ -50,20 +52,22 @@ Unless otherwise stated, all routes support the `.json` and `.xml` format. Data 
 		- url escaped regular expression to use to match context type
 
 ####Returns
-    {
-        "Contexts":
-        [
-            {
-                "Type":"context type",
-                "Name":"context"
-            },
-            {
-                "Type":"other context type",
-                "Name":"other context"
-            },
-        ]
-    }
-   
+
+```JSON
+{
+	"contexts": [
+    		{
+        		"type":"context type",
+        		"name":"context"
+    		},
+    		{
+        		"type":"other context type",
+        		"name":"other context"
+    		},
+	]
+}
+```
+
 ###Signal
 
 ####URL
@@ -74,17 +78,19 @@ Unless otherwise stated, all routes support the `.json` and `.xml` format. Data 
 	- url escaped regular expression to use to match signal name
 
 ####Returns
-    {
-        "Signals":
-        [
-            {
-                 "Name":"signal"
-            },
-            {
-                 "Name":"other signal"
-            }
-        ]
-    }
+
+```JSON
+{
+	"signals":[
+    		{
+         		"name":"signal"
+    		},
+    		{
+         		"name":"other signal"
+    		}
+	]
+}
+```
 
 ###Time
 
@@ -96,19 +102,21 @@ Unless otherwise stated, all routes support the `.json` and `.xml` format. Data 
 	- true/false. Defaults to false. If true only gives start and end time
 
 ####Returns
-    {
-        "Times":
-        [
-            {
-                "Value":"2014-01-01T12:37:22"
-            },
-            {
-                "Value":"2014-01-02"
-            }
-        ]
-    }
+
+```JSON
+{
+	"times":[
+		{
+			"value":"2014-01-01T12:37:22"
+		},
+		{
+			"value":"2014-01-02"
+		}
+    ]
+}
+```    
     
-##Data
+##Data Routes
 
 ###Retrieve
 
@@ -129,32 +137,36 @@ Unless otherwise stated, all routes support the `.json` and `.xml` format. Data 
 	- `signal`
 		- a comma seperated list of url encoded signal names. Returns only the points that match the given signals.
 - **Context**: (required)
-	2. `context`
+	- `context`
 		- a comma seperated list of url escaped context pairs. Returns points that match all context given. All other context is returned.
 		- A context pair looks like this `[context type;context]~[other context type;other context]` and when URL escaped the example would look like this `%5bcontext+type%3bcontext%5d%7e%5bother+context+type%3bother+context%5d`
+
 ####Returns
-    [
-     {
-      "time": {
-       "value": "2013-01-01T00:00:00"
-       },
-      "context": [
-       {
-        "type": "type",
-        "name": "context"
-       },
-       {
-        "type": "other type",
-        "name": "other context"
-       },
-       {
-        "type": "third type",
-        "name": "third context"
-       }
-      ],
-      "signal": {
-       "name": "signal"
-      },
-      "value": 1.0
-     },
-    ]
+ 
+```JSON
+[
+	{
+		"time": {
+   			"value": "2013-01-01T00:00:00"
+   		},
+	  	"context": [
+		   {
+		   	"type": "type",
+		   	"name": "context"
+		   },
+		   {
+		   	"type": "other type",
+		   	"name": "other context"
+		   },
+		   {
+		   	"type": "third type",
+		   	"name": "third context"
+		   }
+	 	],
+	  	"signal": {
+	  		"name": "signal"
+	  	},
+  		"value": 1.0
+ 	},
+]   
+```
