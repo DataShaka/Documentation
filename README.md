@@ -131,9 +131,9 @@ All of the routes below are runable in the [API Demo Page](https://api.datashaka
 - **Time**: (required)
 	- One of
 		- `time` 
-			- a single ISO8601 date time specification. Retures only the points that match this date time.
+			- a single [ISO8601](http://en.wikipedia.org/wiki/ISO8601) date time specification. Retures only the points that match this date time.
 		- `timefrom` and `timeto`
-			- each are an ISO8601 date time specification. Defines a range (inclusive) in which desired points fall. 
+			- each are an [ISO8601](http://en.wikipedia.org/wiki/ISO8601) date time specification. Defines a range (inclusive) in which desired points fall. 
 - **Signal**: (required)
 	- `signal`
 		- a comma seperated list of url encoded signal names. Returns only the points that match the given signals.
