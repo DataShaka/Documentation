@@ -4,13 +4,15 @@
 All calls must have a `token=[guid]` parameter.
 This parameter is not listed against each route in turn.
 
+If you would like a token feel free to email us at hello@datashaka.com or tweet us [@DataShaka] (http://twitter.com/DataShaka).
+
 ##Formats
 Unless otherwise stated, all routes support the `.json` and `.xml` format. Data routes support `.json`,`.xml`,`.csv` and `.html`. 
 
 `.html` is provided for viewing in browser or Excel 'Web Query'.
 
 ##Url Demo Page
-All of the routes below are runnable in the [API Demo Page](https://api.datashaka.com/demo)
+All of the routes below are runnable in the [API Demo Page](https://api.datashaka.com/demo).
 
 ##Metadata Routes
 
@@ -136,11 +138,13 @@ All of the routes below are runnable in the [API Demo Page](https://api.datashak
 			- each are an [ISO8601](http://en.wikipedia.org/wiki/ISO8601) date time specification. Defines a range (inclusive) in which desired points fall. 
 - **Signal**: (required)
 	- `signal`
-		- a comma seperated list of url encoded signal names. Returns only the points that match the given signals.
+		- a comma separated list of url encoded signal names. Returns only the points that match the given signals.
 - **Context**: (required)
 	- `context`
-		- a comma seperated list of url escaped context pairs. Returns points that match all context given. All other context is returned.
-		- A context pair looks like this `[context type;context]~[other context type;other context]` and when URL escaped the example would look like this `%5bcontext+type%3bcontext%5d%7e%5bother+context+type%3bother+context%5d`
+		- a comma separated list of url escaped context pairs. Returns points that match all context given. All other context is returned.
+		- a context pair looks like this `[context type:context][other context type:other context]` and when URL escaped the example would look like this `%5bcontext+type%3bcontext%5d%7e%5bother+context+type%3bother+context%5d`
+		- it is possible to specify multiple items of the same context type, e.g. `[colour:blue][colour:red][colour:yellow]`; in Boolean logic, this would resolve to `colour = blue OR colour = red OR colour = yellow`
+		- multiple items of different context type are interpreted as AND, e.g. `[colour:blue][shape:square][shape:circle]` is interpreted as `colour = blue AND (shape = square OR shape = circle)`
 
 ####Returns
  
