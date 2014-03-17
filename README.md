@@ -1,7 +1,5 @@
 #DataShaka API V0.2
 
-Our very first public API release!
-
 ##Authentication
 All calls must have a `token=[guid]` parameter.
 This parameter is not listed against each route in turn.
