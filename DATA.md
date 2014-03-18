@@ -53,6 +53,18 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 ###Twitter
 ####Context
 
+`[Source:Twitter][Company:Google][Handle:google]`
+
+`[Source:Twitter][Company:Google][Handle:googleanalytics]`
+
+`[Source:Twitter][Company:Google][Handle:googleapps]`
+
+`[Source:Twitter][Company:Google][Handle:GoogleAppsDev]`
+
+`[Source:Twitter][Company:Google][Handle:googledevs]`
+
+`[Source:Twitter][Company:Google][Handle:GoogleMapsAPI]`
+
 ####Signal
 `Tweets`
 
@@ -64,4 +76,4 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 
 `Listed`
 ####Time Range
-`[all]` `2014-03-17 ~ present`
+`[Company:Google]` `2014-03-17 ~ present`
