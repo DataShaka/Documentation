@@ -35,6 +35,8 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 `[Symbol:GOOG]` `2004-08-19 ~ present`
 
 `[Symbol:MSFT]` `1986-03-13 ~ present`
+
+
 ###Google Trends
 ####Context
 `[Source:Google Trends][Company:Google][Keyword:google]`
@@ -50,6 +52,8 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 `[Keyword:bing]` `2004-01-04 ~ 2014-03-09`
 
 `[Keyword:yahoo]` `2004-01-04 ~ 2014-03-09`
+
+
 ###Twitter
 ####Context
 
