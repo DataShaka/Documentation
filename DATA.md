@@ -89,3 +89,5 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 ###High and Web Search interest for Google and Microsoft
 `https://api.datashaka.com/v0.2/retrieve.json?groupspace=Community&timeFrom=2013-01-01&timeTo=2013-12-30&context=[Company:Google][Company:Microsoft]&signal=High,Web Search interest&token=YOUR TOKEN`
 
+###Web Search interest and Close for Microsoft and Google
+`https://api.datashaka.com/v0.2/retrieve.json?groupspace=Community&timeFrom=2013-01-01&timeTo=2013-12-30&context=[Company:Yahoo][Company:Microsoft]&signal=Web Search interest,Close&token=YOUR TOKEN`
