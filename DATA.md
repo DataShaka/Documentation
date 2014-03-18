@@ -31,6 +31,23 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 `Adj Close`
 ####Time Range
 `[Symbol:YHOO]` `1996-04-15 ~ present`
-`[Symbol:GOOG]` `2004-08-19 ~ present`
-`[Symbol:MSFT]` `1986-03-13 ~ present`
 
+`[Symbol:GOOG]` `2004-08-19 ~ present`
+
+`[Symbol:MSFT]` `1986-03-13 ~ present`
+###Google Trends
+####Context
+`[Source:Google Trends][Company:Google][Keyword:google]`
+
+`[Source:Google Trends][Company:Microsoft][Keyword:bing]`
+
+`[Source:Google Trends][Company:Yahoo][Keyword:yahoo]`
+####Signals
+`Web Search interest`
+####Time Range
+`[Keyword:google]` `2004-01-04 ~ 2014-03-09`
+
+`[Keyword:bing]` `2004-01-04 ~ 2014-03-09`
+
+`[Keyword:yahoo]` `2004-01-04 ~ 2014-03-09`
+###Twitter
