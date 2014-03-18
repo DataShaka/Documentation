@@ -36,7 +36,7 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 
 `[Symbol:MSFT]` `1986-03-13 ~ present`
 
-
+<hr/>
 ###Google Trends
 ####Context
 `[Source:Google Trends][Company:Google][Keyword:google]`
