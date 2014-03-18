@@ -86,3 +86,6 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 ###Tweets for all tracked Google Handles
 `https://api.datashaka.com/v0.2/retrieve.json?groupspace=Community&timeFrom=2014-03-01&timeTo=2014-03-31&context=[Company:Google]&signal=Tweets&token=YOUR TOKEN`
 
+###High and Web Search interest for Google and Microsoft
+`https://api.datashaka.com/v0.2/retrieve.json?groupspace=Community&timeFrom=2013-01-01&timeTo=2013-12-30&context=[Company:Google][Company:Microsoft]&signal=High,Web Search interest&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA`
+
