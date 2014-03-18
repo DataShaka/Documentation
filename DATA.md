@@ -51,3 +51,17 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 
 `[Keyword:yahoo]` `2004-01-04 ~ 2014-03-09`
 ###Twitter
+####Context
+
+####Signal
+`Tweets`
+
+`Followers`
+
+`Friends`
+
+`Favorites`
+
+`Listed`
+####Time Range
+`[all]` `2014-03-17 ~ present`
