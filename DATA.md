@@ -29,3 +29,8 @@ Time Range from a source described as `ISO8601 ~ ISO8601`
 `Volume`
 
 `Adj Close`
+####Time Range
+`[Symbol:YHOO]` `1996-04-15 ~ present`
+`[Symbol:GOOG]` `2004-08-19 ~ present`
+`[Symbol:MSFT]` `1986-03-13 ~ present`
+
