@@ -28,6 +28,7 @@ if($pandoCAliasExists -eq $false){
 
 
  ni -ItemType Directory "html" -force | Out-Null
+ ni -ItemType Directory "html/routes" -force | Out-Null
 
 
 gci -Path "markdown" -Filter "*.md"  | %{
@@ -35,6 +36,15 @@ gci -Path "markdown" -Filter "*.md"  | %{
     $basename = $_.BaseName
     GoPandoc $_.FullName "html/$basename.html" "markdown/header.html" "markdown/footer.html"
 }
+
+gci -Path "markdown/routes" -Filter "*.md" -r | %{
+    $name = $_.Name
+    $basename = $_.BaseName
+    $directory = $_.Directory.Name
+    #ni -ItemType Directory "html/routes/$directory" -force | Out-Null
+    GoPandoc $_.FullName "html/routes/$basename.html" "markdown/routes/header.html" "markdown/routes/footer.html"
+}
+
 
 }
 else
