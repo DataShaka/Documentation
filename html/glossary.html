@@ -34,58 +34,63 @@
 <hr>
 
 <h1 id="glossary-of-terms">Glossary of Terms</h1>
+<h2 id="katsu"><a href="#katsu">Katsu</a></h2>
 <h3 id="katsu-point">Katsu point</h3>
-<p>One data point with an element of Time, Context, Signal and Value ####Time A single point in time specified by an ISO8601 DateTime. This is ISO8601 down to the millisecond or any partial date to just year (yyyy e.g. 2015).</p>
-<h4 id="context">Context</h4>
+<p>One data point with an element of Time, Context, Signal and Value</p>
+<h3 id="time">Time</h3>
+<p>A single point in time specified by an ISO8601 DateTime. This is ISO8601 down to the millisecond or any partial date to just year (yyyy e.g. 2015).</p>
+<h3 id="context">Context</h3>
 <p>A single Context Type &amp; Context pair or list of pairs. Context in Katsu is written using the syntax</p>
-<pre class="language-katsu"><code>[Ct1:C1]â€¦[Ctn:Cn]</code></pre>
-<p>Context is the descriptive elements of a Katsu point that give meaning to a Signal Value. Context Types without Context names are specified using <code>[Ct1]â€¦[Ctn]</code> and Context names without Context Types are specified using <code>[:C1]â€¦[:Cn]</code></p>
+<pre class="language-katsu"><code>[Ct1:C1]ÔÇª[Ctn:Cn]</code></pre>
+<p>Context is the descriptive elements of a Katsu point that give meaning to a Signal Value. Context Types without Context names are specified using <code>[Ct1]ÔÇª[Ctn]</code> and Context names without Context Types are specified using <code>[:C1]ÔÇª[:Cn]</code></p>
 <p><strong>Example</strong></p>
 <pre class="language-katsu"><code>[Source:Survey][Brand:Nutrigum][Category:Gum]</code></pre>
-<h4 id="signal">Signal</h4>
+<h3 id="signal">Signal</h3>
 <p>A single element describing a Value. Signals in Katsu are written with the</p>
-<pre class="language-katsu"><code>{S1:V1}â€¦{Sn:Vn}</code></pre>
-<p>syntax when paired with a Value and <code>{S1}(â€¦{Sn})</code> syntax when not paired with a Value.</p>
+<pre class="language-katsu"><code>{S1:V1}ÔÇª{Sn:Vn}</code></pre>
+<p>syntax when paired with a Value and <code>{S1}(ÔÇª{Sn})</code> syntax when not paired with a Value.</p>
 <p><strong>Example</strong></p>
 <pre class="language-katsu"><code>{Sales:100}{Revenue:20.50}</code></pre>
-<h4 id="value">Value</h4>
+<h3 id="value">Value</h3>
 <p>A numeric value. Values in Katsu is written with the syntax</p>
-<pre class="language-katsu"><code>{S1:V1}â€¦{Sn:Vn}</code></pre>
-<p>when paired with a Signal and <code>{:V1}(â€¦{Vn})</code> when not paired with a Signal.</p>
+<pre class="language-katsu"><code>{S1:V1}ÔÇª{Sn:Vn}</code></pre>
+<p>when paired with a Signal and <code>{:V1}(ÔÇª{Vn})</code> when not paired with a Signal.</p>
 <p><strong>Example</strong></p>
 <pre class="language-katsu"><code>{Sales:100}{Revenue:20.50}</code></pre>
-<h4 id="connected">Connected</h4>
-<p>Within a unified set of Katsu data, an element (T,C,S or V) can be <em>Connected</em> which means it is part of a Katsu set representing actual data. Elements can be <em>Disconnected</em> which means they are considered in the overall unified set and not in their relationships to Points.</p>
-<h4 id="point">Point</h4>
+<h3 id="point">Point</h3>
 <p>A Katsu point is 1 T, 1 or more C, 1 S and 1 V..</p>
-<h4 id="points">Points</h4>
+<h3 id="points">Points</h3>
 <p>A set of individual Point</p>
-<h4 id="discovery">Discovery</h4>
-<p>Discovery is the process of query to determine what data is available. Discovery queries are used to examine the â€˜meta dataâ€™ of a unified set of Katsu.</p>
+<h3 id="connected">Connected</h3>
+<p>Within a unified set of Katsu data, an element (T,C,S or V) can be <em>Connected</em> which means it is part of a Katsu set representing actual data. Elements can be <em>Disconnected</em> which means they are considered in the overall unified set and not in their relationships to Points.</p>
+<h2 id="queries"><a href="#queries">Queries</a></h2>
+<h3 id="discovery">Discovery</h3>
+<p>Discovery is the process of query to determine what data is available. Discovery queries are used to examine the <strong>meta data</strong> of a unified set of Katsu.</p>
 <pre><code>example needed here</code></pre>
-<h4 id="exploration">Exploration</h4>
+<h3 id="exploration">Exploration</h3>
 <p>Exploration queries are used to move through a unified data set to establish connections between elements of the set. For example: secondary or tertiary connections between Signals and Context where they are not directly connected to a Value.</p>
-<h4 id="retrieve">Retrieve</h4>
+<h3 id="retrieve">Retrieve</h3>
 <p>Retrieve queries are used to get a portion of the overall unified set. For example, one month of data for two particular signals.</p>
-<h4 id="orchestration">Orchestration</h4>
-<p>The process of managing the movement, lineage, storage and quality control of data</p>
-<h4 id="apivx.x">APIVx.x</h4>
-<p>Specification of a version of the API. For Example APIV0.2. If used in â€˜Availabilityâ€™ refers to a version of the API where a feature has been implemented and is currently available.</p>
-<h4 id="planned">Planned</h4>
-<p>This feature has been entered on to the backlog and prioritized.</p>
-<h4 id="not-yet-implemented">Not yet implemented</h4>
-<p>This feature is not yet implemented and thus not available in any version of the API. This feature has been accepted as desirable for prioritization in the backlog. This feature is likely to be implemented but has not been confirmed.</p>
-<h4 id="under-consideration">Under consideration</h4>
-<p>This feature has been suggested and is being considered for entry into the backlog for prioritization. This feature may never be implemented.</p>
-<h4 id="rejected">Rejected</h4>
-<p>This feature has been rejected and will not be implemented.</p>
-<h4 id="deprecated">Deprecated</h4>
-<p>This feature will be removed when its supporting versions are sunset.</p>
-<h4 id="sunset-date">Sunset date</h4>
-<p>The date when a version will no longer be made available.</p>
-<h4 id="tractor">Tractor</h4>
-<p>The DataShaka data orchestration language. Read <a href="../../Tractor/Documentation/html/tractor.html">this</a> for more details</p>
-<h4 id="enrich">Enrich</h4>
+<h3 id="enrich">Enrich</h3>
 <p>Alter data in some way</p>
+<h2 id="orchestration"><a href="#orchestration">Orchestration</a></h2>
+<p>The process of managing the movement, lineage, storage and quality control of data</p>
+<h3 id="tractor">Tractor</h3>
+<p>The DataShaka data orchestration language. Read <a href="../../Tractor/Documentation/html/tractor.html">this</a> for more details</p>
+<h2 id="implementation"><a href="#implementation">Implementation</a></h2>
+<h3 id="apivx.x">APIVx.x</h3>
+<p>Specification of a version of the API. For Example APIV0.2. If used in ÔÇÿAvailabilityÔÇÖ refers to a version of the API where a feature has been implemented and is currently available.</p>
+<h3 id="planned">Planned</h3>
+<p>This feature has been entered on to the backlog and prioritized.</p>
+<h3 id="not-yet-implemented">Not yet implemented</h3>
+<p>This feature is not yet implemented and thus not available in any version of the API. This feature has been accepted as desirable for prioritization in the backlog. This feature is likely to be implemented but has not been confirmed.</p>
+<h3 id="under-consideration">Under consideration</h3>
+<p>This feature has been suggested and is being considered for entry into the backlog for prioritization. This feature may never be implemented.</p>
+<h3 id="rejected">Rejected</h3>
+<p>This feature has been rejected and will not be implemented.</p>
+<h3 id="deprecated">Deprecated</h3>
+<p>This feature will be removed when its supporting versions are sunset.</p>
+<h3 id="sunset-date">Sunset date</h3>
+<p>The date when a version will no longer be made available.</p>
 </body>
 </html>

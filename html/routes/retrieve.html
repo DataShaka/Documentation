@@ -32,7 +32,7 @@
 <hr>
 
 <h1 id="retrieve-route">Retrieve route</h1>
-<p>Data Retrieval routes provide access to ‘Blender’ the Katsu query tool. These</p>
+<p>Data Retrieval routes provide access to <em>Blender</em> the Katsu query tool. These</p>
 <ul>
 <li>Goal orientated queries for data.</li>
 <li>Basic operations on the queried set</li>
@@ -40,25 +40,25 @@
 <li>GET and POST. Post is used where the query goes over the GET length limit.</li>
 </ul>
 <ol style="list-style-type: lower-alpha">
-<li><strong><em>Under Consideration</em></strong> When POST is used, the post body should be a ‘form’ and as such in the form key=value&amp;key=value as with GET
+<li><strong><em>Under Consideration</em></strong> When POST is used, the post body should be a <strong>form</strong> and as such in the form key=value&amp;key=value as with GET
 <ul>
-<li>For this kind of query a content type of ‘multipart/form-data‘ should be used when making the query.</li>
+<li>For this kind of query a content type of <strong>multipart/form-data</strong> should be used when making the query.</li>
 </ul></li>
 <li><strong><em>Under Consideration</em></strong> For complicated queries a JSON object may be used.
 <ul>
-<li>For this kind of query a content type of ‘text/json’ should be used when making the query.</li>
+<li>For this kind of query a content type of <strong>text/json</strong> should be used when making the query.</li>
 <li><p>This json object should be in the follow form</p>
 <pre class="language-javascript"><code>{
-“parameter_name”:”parameter value”,
-“parameter_name”: [“parameter value”,”parameter value”]
+parameter_name:parameter value,
+parameter_name: [parameter value,parameter value]
 }</code></pre></li>
 <li><p>If a parameter can have an object representation this will be given with the parameter specification in the main route description. But will conform to the following:</p>
 <pre class="language-javascript"><code>{
-“parameter_name”:{
-“field_name”:”field value”,
-“field_name”:[“field value”,”field value”]
-“field_name”:{
-    “field_object_field”:”field object field value”
+parameter_name:{
+field_name:field value,
+field_name:[field value,field value]
+field_name:{
+    field_object_field:field object field value
 }
 }
 }</code></pre></li>
@@ -140,7 +140,7 @@
 <td align="left">Signal list</td>
 <td align="left">True</td>
 <td align="left">A list of Signals that Points must match</td>
-<td align="left">Not yet implemented APIV0.2 provides a ‘comma separated list’ approach</td>
+<td align="left">Not yet implemented APIV0.2 provides a comma separated list approach</td>
 </tr>
 <tr class="even">
 <td align="left">context</td>
@@ -224,9 +224,9 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p>Tractor post object : “Give me total (sum) sales and revenue totals by City for January, February and March”</p>
+<p>Tractor post object : Give me total (sum) sales and revenue totals by City for January, February and March</p>
 <pre class="language-tractor"><code>{
- “tractor”:”group by week ~&gt;filter {N Weighted}{Weighted Base} ~&gt; calculate “{N Weighted}/{Weighted Base}” returns {N Value} ~&gt; sum”,
+ tractor:group by week ~&gt;filter {N Weighted}{Weighted Base} ~&gt; calculate {N Weighted}/{Weighted Base} returns {N Value} ~&gt; sum,
 }</code></pre>
 </body>
 </html>

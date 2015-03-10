@@ -36,7 +36,7 @@
 <ul>
 <li>Which elements of T, C, S are available within a stored set</li>
 <li>What connected sets of data are available within a unified set.</li>
-<li>All GET routes â€ƒ</li>
+<li>All GET routes ÔÇâ</li>
 </ul>
 <h2 id="groupspace">Groupspace</h2>
 <p><strong>Route</strong></p>
@@ -44,7 +44,7 @@
 <p><strong>Parameters</strong></p>
 <p>None</p>
 <p><strong>Example</strong></p>
-<p>â€œGive me the list of groupspaces in my accountâ€</p>
+<p>ÔÇ£Give me the list of groupspaces in my accountÔÇØ</p>
 <pre class="language-http"><code>(base)/groupspace</code></pre>
 <h2 id="time">Time</h2>
 <p><strong>Route</strong></p>
@@ -106,7 +106,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p>â€œGive the bounds of date times available in 2014 for sales and revenue where they relate to cities in the UKâ€</p>
+<p>ÔÇ£Give the bounds of date times available in 2014 for sales and revenue where they relate to cities in the UKÔÇØ</p>
 <pre class="language-http"><code>(base)/time?time_from=2014-01-01&amp;time_to=2014-12-31&amp;bounds=true&amp;context=[Country:UK][City]&amp;signal={sales}{revenue}</code></pre>
 <h2 id="context">Context</h2>
 <p><strong>Route</strong></p>
@@ -142,7 +142,7 @@
 <td align="left">Context list</td>
 <td align="left">False</td>
 <td align="left">The list of Context filters for which Context should be returned</td>
-<td align="left">Not yet implemented APIV0.2 implements â€˜oftypeâ€™, â€˜contextmatchingâ€™ and â€˜contexttypematchingâ€™</td>
+<td align="left">Not yet implemented APIV0.2 implements ÔÇÿoftypeÔÇÖ, ÔÇÿcontextmatchingÔÇÖ and ÔÇÿcontexttypematchingÔÇÖ</td>
 </tr>
 <tr class="even">
 <td align="left">signal</td>
@@ -168,7 +168,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p>â€œGive the list of context connected to sales and revenue that contains a â€˜Cityâ€™ in the (Country) â€˜UKâ€™ in 2014â€</p>
+<p>ÔÇ£Give the list of context connected to sales and revenue that contains a ÔÇÿCityÔÇÖ in the (Country) ÔÇÿUKÔÇÖ in 2014ÔÇØ</p>
 <pre class="language-http"><code>(base)/context?time_from=2014-01-01&amp;time_to=2014-12-31 &amp;context=[Country:UK][City]&amp;signal={sales}{revenue}</code></pre>
 <h2 id="signal">Signal</h2>
 <p><strong>Route</strong></p>
@@ -211,7 +211,7 @@
 <td align="left">Signal list</td>
 <td align="left">True</td>
 <td align="left">The list of Signal names for which Signal should be returned</td>
-<td align="left">Not yet implemented APIV0.2 Implements â€˜signalsmatchingâ€™</td>
+<td align="left">Not yet implemented APIV0.2 Implements ÔÇÿsignalsmatchingÔÇÖ</td>
 </tr>
 <tr class="odd">
 <td align="left">connected</td>
@@ -223,7 +223,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p>â€œGive the signals that match â€˜[Ss].*â€™ in 2014 that has the context of a City in the UK.â€</p>
+<p>ÔÇ£Give the signals that match ÔÇÿ[Ss].*ÔÇÖ in 2014 that has the context of a City in the UK.ÔÇØ</p>
 <pre class="language-http"><code>(base)/signal?time_from=2014-01-01&amp;time_to=2014-12-31 &amp;context=[Country:UK][City]&amp;signal={[Ss].*}</code></pre>
 </body>
 </html>

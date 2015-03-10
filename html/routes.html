@@ -83,9 +83,9 @@
 <tr class="odd">
 <td align="left">The parameter Name</td>
 <td align="left">The Expected Data Type</td>
-<td align="left">Returns limited to include elements only connected to Katsu points. This will show â€˜trueâ€™ or â€˜falseâ€™ This is not applicable for parameters that limit a return. â€˜N/Aâ€™ will be used in this case</td>
+<td align="left">Returns limited to include elements only connected to Katsu points. This will show ÔÇÿtrueÔÇÖ or ÔÇÿfalseÔÇÖ This is not applicable for parameters that limit a return. ÔÇÿN/AÔÇÖ will be used in this case</td>
 <td align="left">A more detailed description of the parameter</td>
-<td align="left">Notes on the availability of a parameter. This may be â€˜deprecatedâ€™ meaning it is no longer available in any version or a list of versions that support this parameter.</td>
+<td align="left">Notes on the availability of a parameter. This may be ÔÇÿdeprecatedÔÇÖ meaning it is no longer available in any version or a list of versions that support this parameter.</td>
 </tr>
 </tbody>
 </table>
@@ -101,19 +101,24 @@
 <pre class="language-katsu"><code>[ContextType:Context][Ct2:C2]..[Ctn:Cn]</code></pre>
 <ul>
 <li>Ct and C are regular expressions to match the Context Type and Context Name.</li>
-<li>Ct and C can be replaced with â€˜functionsâ€™ such as [soundex(string)] with the name of the function followed by () taking precedence to a context part match.</li>
+<li>Ct and C can be replaced with functions such as [soundex(string)] with the name of the function followed by () taking precedence to a context part match.</li>
 <li>Including duplicate Ct references will result in an OR match. For example [City:London][City:York] will return London OR York matches.</li>
 </ul>
-<p><strong>Availbility</strong> : APIV0.2 - RegEx not yet implemented - Functions not yet implemented - â€˜Or Matchâ€™ APIV0.2</p>
+<p><strong>Availbility</strong> : APIV0.2</p>
+<ul>
+<li>RegEx not yet implemented</li>
+<li>Functions not yet implemented</li>
+<li><strong>Or</strong> Match APIV0.2</li>
+</ul>
 <h5 id="signal-list">Signal list</h5>
 <pre class="language-katsu"><code>{Signal A}{Signal B}{Signal Z}</code></pre>
 <ul>
 <li>Given signal matches are regular expression to match signal names</li>
-<li>Matches can be replaced with â€˜functionsâ€™ such as {soundex(string)} with the name for the function followed by () taking precedence to a signal match</li>
+<li>Matches can be replaced with functions such as {soundex(string)} with the name for the function followed by () taking precedence to a signal match</li>
 </ul>
 <p><strong>Availbility</strong> : APIV0.2 uses CSV not TCSV2.0 Syntax - RegEx not yet implemented - Functions not yet implemented</p>
 <h5 id="number">Number</h5>
-<p>E.g. â€œ0.0â€, â€œ10000â€</p>
+<p>E.g. <code>0.0</code>, <code>10000</code></p>
 <p><strong>Not yet implemented</strong></p>
 </body>
 </html>
