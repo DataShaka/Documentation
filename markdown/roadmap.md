@@ -1,6 +1,6 @@
 #Core API Roadmap
 
-##What you will learn here
+##Table of contents
 
 - [Principles](principles.html)
 
