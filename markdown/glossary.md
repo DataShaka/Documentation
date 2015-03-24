@@ -1,6 +1,6 @@
 #Glossary of Terms
 
-##[Katsu](#katsu)
+##<a id="katsu">Katsu</a>
 
 ###Katsu point
 One data point with an element of Time, Context, Signal and Value
@@ -11,9 +11,9 @@ A single point in time specified by an ISO8601 DateTime. This is ISO8601 down to
 ###Context
 A single Context Type & Context pair or list of pairs. Context in Katsu is written using the syntax
 ```language-katsu
-[Ct1:C1]…[Ctn:Cn]
+[Ct1:C1]....[Ctn:Cn]
 ```
-Context is the descriptive elements of a Katsu point that give meaning to a Signal Value. Context Types without Context names are specified using `[Ct1]…[Ctn]` and Context names without Context Types are specified using `[:C1]…[:Cn]`
+Context is the descriptive elements of a Katsu point that give meaning to a Signal Value. Context Types without Context names are specified using `[Ct1]...[Ctn]` and Context names without Context Types are specified using `[:C1]...[:Cn]`
 
 **Example**
 
@@ -23,9 +23,9 @@ Context is the descriptive elements of a Katsu point that give meaning to a Sign
 ###Signal
 A single element describing a Value. Signals in Katsu are written with the
 ```language-katsu
-{S1:V1}…{Sn:Vn}
+{S1:V1}...{Sn:Vn}
 ```
-syntax when paired with a Value and `{S1}(…{Sn})` syntax when not paired with a Value.
+syntax when paired with a Value and `{S1}...{Sn}` syntax when not paired with a Value.
 
 **Example**
 ```language-katsu
@@ -33,11 +33,11 @@ syntax when paired with a Value and `{S1}(…{Sn})` syntax when not paired with 
 ```
 
 ###Value
-A numeric value. Values in Katsu is written with the syntax 
+A numeric value. Values in Katsu is written with the syntax
 ```language-katsu
-{S1:V1}…{Sn:Vn}
+{S1:V1}...{Sn:Vn}
 ```
-when paired with a Signal and `{:V1}(…{Vn})` when not paired with a Signal.
+when paired with a Signal and `{:V1}...{Vn}` when not paired with a Signal.
 
 **Example**
 
@@ -58,26 +58,27 @@ A set of individual Point
 Within a unified set of Katsu data, an element (T,C,S or V) can be *Connected* which means it is part of a Katsu set representing actual data. Elements can be *Disconnected* which means they are considered in the overall unified set and not in their relationships to Points.
 
 
-##[Queries](#queries)
+##<a id="queries">Queries</a>
 
 
 ###Discovery
 Discovery is the process of query to determine what data is available. Discovery queries are used to examine the **meta data** of a unified set of Katsu.
 
-	example needed here
+Check out the [Discovery API Route](routes/discovery.html) page to learn more.
 
+###Retrieve
+Retrieve queries are used to get a portion of the overall unified set. For example, one month of data for two particular signals.
+
+Check out the [Retrieval API Route](routes/retrieve.html) page to learn more.
 
 ###Exploration
 
 Exploration queries are used to move through a unified data set to establish connections between elements of the set. For example: secondary or tertiary connections between Signals and Context where they are not directly connected to a Value.
 
-###Retrieve
-Retrieve queries are used to get a portion of the overall unified set. For example, one month of data for two particular signals.
-
 ###Enrich
 Alter data in some way
 
-##[Orchestration](#orchestration)
+##<a id="orchestration">Orchestration</a>
 
 The process of managing the movement, lineage, storage and quality control of data
 
@@ -86,11 +87,11 @@ The process of managing the movement, lineage, storage and quality control of da
 The DataShaka data orchestration language. Read [this](../../Tractor/Documentation/html/tractor.html) for more details
 
 
-##[Implementation](#implementation)
+##<a id="implementation">Implementation</a>
 
 ###APIVx.x
 
-Specification of a version of the API. For Example APIV0.2. If used in ‘Availability’ refers to a version of the API where a feature has been implemented and is currently available.
+Specification of a version of the API. For Example APIV0.2. If used in *Availability* refers to a version of the API where a feature has been implemented and is currently available.
 
 ###Planned
 

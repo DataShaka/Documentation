@@ -34,19 +34,19 @@
 <hr>
 
 <h1 id="principles">Principles</h1>
-<h3 id="type-of-api"><a href="#type-api">Type of API</a></h3>
-<p>The DataShaka Core API will be a REST API with a Query and Response model. The response will be standard HTTP, so will constitute a stream of data. However a dedicated long-life stream API for ÔÇÿlisteningÔÇÖ is on our roadmap but not presented within this document. As a REST API the functionally will be described in terms of routes (queries with parameters that will either be GET or POST) and responses that will be in the form of streamed ÔÇÿdocumentsÔÇÖ.</p>
-<h3 id="katsu"><a href="#katsu">Katsu</a></h3>
+<h3 id="type-of-api"><a id="type-api">Type of API</a></h3>
+<p>The DataShaka Core API will be a REST API with a Query and Response model. The response will be standard HTTP, so will constitute a stream of data. However a dedicated long-life stream API for <em>listening</em> is on our roadmap but not presented within this document. As a REST API the functionally will be described in terms of routes (queries with parameters that will either be GET or POST) and responses that will be in the form of streamed <em>documents</em>.</p>
+<h3 id="katsu"><a id="katsu">Katsu</a></h3>
 <p><strong>Katsu</strong> is the data fabric around which all DataShaka is based.</p>
 <p><strong>Katsu</strong> is a Content Agnostic Master Ontology (CAMO) with the elements Time, Context, Signal and Value. One <strong>Katsu</strong> point describes a contextualized numerical value at a point in time. <em>Time</em> is an ISO8601 datetime, <em>Context</em> is a set of key value pairs, <em>Signal</em> is a single string and <em>Value</em> is a numerical <em>value</em>. A set of Katsu contains multiple points.</p>
-<p>Within any set individual Context pairs as well as sets of pairs and Signals should be considered unique. Find out more here: http://www.datashaka.com/blog/techie/2013/11/what-is-tcsv</p>
-<h3 id="key-routes"><a href="#routes">Key Routes</a></h3>
+<p>Within any set individual Context pairs as well as sets of pairs and Signals should be considered unique. Find out about the <a href="http://www.datashaka.com/blog/techie/2013/11/what-is-tcsv">history of Katsu</a> on our blog.</p>
+<h3 id="key-routes"><a id="routes">Key Routes</a></h3>
 <p>The key routes discussed in the document fall under two broad categories :</p>
 <ol style="list-style-type: decimal">
 <li><strong><a href="routes/discovery.html">Discovery</a></strong>
 <ol style="list-style-type: lower-alpha">
 <li>What possible values of T, C, S and V exist within stored data.</li>
-<li>What values of T, C, S and V are connected and create ÔÇÿsetsÔÇÖ.</li>
+<li>What values of T, C, S and V are connected and create <em>sets</em>.</li>
 </ol></li>
 <li><strong><a href="routes/retrieve.html">Data Retrieval</a></strong>
 <ol style="list-style-type: lower-alpha">
@@ -58,18 +58,18 @@
 <li>Streamed data (TBC)</li>
 </ol></li>
 </ol>
-<h3 id="basics"><a href="#basics">Basics</a></h3>
+<h3 id="basics"><a id="basics">Basics</a></h3>
 <p>All routes are available under the base sub-domain https://api.datashaka.com/</p>
-<h3 id="https"><a href="#https">HTTPS</a></h3>
+<h3 id="https"><a id="https">HTTPS</a></h3>
 <p>All routes require HTTPS encryption.</p>
-<h3 id="versions"><a href="#versionning">Versions</a></h3>
-<p>This API will be versioned explicitly within the URL. The versions will be sunset when their functionality is either entirely replaced by a new version or the functionality is deprecated. In the development of this API there will sometimes be ÔÇÿAlphaÔÇÖ and ÔÇÿBetaÔÇÖ versions available. We ask that these are not used in production as their functionality will not be finalized. In any route the version is directly after the domain and always preceded by a ÔÇÿvÔÇÖ.</p>
-<p>For example, the current API at time of writing is https://api.datashaka.com/v0.2</p>
-<h3 id="authentication"><a href="#authentication">Authentication</a></h3>
-<p>Through <strong><em>under consideration</em></strong> mechanism an API Token will be provided. This Token is the equivalent of a user on the DataShaka platform. The token has privileges to specified sets (Groupspaces) of data for a single account. Once this token has been obtained it must be included in every call to the API regardless of route. Regardless of REST method a parameter called ÔÇÿtokenÔÇÖ must exist with the value of the token provided. For example, in a GET call token=xyz123 <strong>The security of this token is the responsibility of the bearer.</strong></p>
-<h3 id="convention"><a href="#convention">Convention</a></h3>
+<h3 id="versions"><a id="versionning">Versions</a></h3>
+<p>This API will be versioned explicitly within the URL. The versions will be sunset when their functionality is either entirely replaced by a new version or the functionality is deprecated. In the development of this API there will sometimes be <em>Alpha</em> and <em>Beta</em> versions available. We ask that these are not used in production as their functionality will not be finalized. In any route the version is directly after the domain and <strong>always preceded by a v</strong>.</p>
+<p>For example, the current API at time of writing is <code>https://api.datashaka.com/v0.2</code>.</p>
+<h3 id="authentication"><a id="authentication">Authentication</a></h3>
+<p>Through <strong><em>under consideration</em></strong> mechanism an API Token will be provided. This Token is the equivalent of a user on the DataShaka platform. The token has privileges to specified sets (Groupspaces) of data for a single account. Once this token has been obtained it must be included in every call to the API regardless of route. Regardless of REST method a parameter called <strong>token</strong> must exist with the value of the token provided. For example, in a GET call token=xyz123 <strong>The security of this token is the responsibility of the bearer.</strong></p>
+<h3 id="convention"><a id="convention">Convention</a></h3>
 <p>In all following route examples the base subdomain and version are replaced with (base) and the token parameter is left out.</p>
-<h3 id="rate-limits"><a href="#rate-limits">Rate Limits</a></h3>
-<p>This API will be covered by ÔÇÿfair useÔÇÖ as opposed to an explicit rate limit. ÔÇÿFair useÔÇÖ means that tokens/accounts will only be blocked from using the API if they are deemed to be calling the API in a manner which seeks to negatively impact the service provided, overall or for specific accounts.</p>
+<h3 id="rate-limits"><a id="rate-limits">Rate Limits</a></h3>
+<p>This API will be covered by <em>fair use</em> as opposed to an explicit rate limit. Fair use means that tokens/accounts will only be blocked from using the API if they are deemed to be calling the API in a manner which seeks to negatively impact the service provided, overall or for specific accounts.</p>
 </body>
 </html>

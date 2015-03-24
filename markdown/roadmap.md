@@ -13,6 +13,7 @@
     - [Authentication](./principles.html#authentication)
     - [Convention](./principles.html#convention)
     - [Rate Limits](./principles.html#rate-limits)
+
 - [Glossary of terms](glossary.html)
 
     - [Katsu](glossary.html#katsu)
