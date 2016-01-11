@@ -8,19 +8,19 @@
 ##Version
 
 ```
-    V1.0
+V1.0
 ```
 
 ##Formatters
 
 ```
-    .json
+.json
 ```
 
 ##Authentication Parameters
 
 ```
-    token=<your token>
+token=<your token>
 ```
 
 ##Base
@@ -65,26 +65,63 @@ https://api.datashaka.com/v1/discover/groupspace.json&token=<your token>
 **Route** 
 
 ```language-http
-(base)/time
+(base)/discover/time.json
 ```
 
 **Parameters**
 
-| Name | Type |Connected |Description |Availability |
-|--------|--------|--------|--------|--------|
-|time_from|ISO8601| N/A	|	A limit on the first time returned (inclusive) |Not yet implemented |
-|time_to|ISO8601|N/A|A limit on the last time returned (inclusive)|Not yet implemented|
-|bounds|	Boolean 	|N/A|	Only the first and last time will be returned	|APIV0.2|
-|context|	Context list|	True	|The list of context filters for which Time should be returned|	Not yet implemented|
-|signal	|Signal list	|True	|The list of signal names for which Time should be returned|	Not yet implemented|
-|connected	|Boolean|	N/A|	Enforces that only Time values connected to Katsu points should be returned	|Not yet implemented|
+_groupspace_ (required)
+
+```
+groupspace=Demo
+```
+
+_time from_ (required)
+
+```
+time_from=ISO8601
+```
+use ```time_from=1901``` for 'earliest possible date'
+
+_time to_ (required)
+
+```
+time_to=ISO8601
+```
+use ```time_to=2099``` for 'latest possible date'
+
+_mode_ (optional)
+
+```
+mode=bounds
+```
+
+Possible modes:
+- none: equivalent to not providing mode
+- nounds: returns only the **first** and **last** date in the requested range
+
+_signal_ (optional)
+
+```
+signal={Sales}
+```
+
+Filters the results to times for data that has the signal 'Sales'.
+
+_context_ (optional)
+
+```
+context=[Brand:X]
+```
+
+Filters the results to times for data that has the context 'Brand:Martini'.
 
 **Example**
 
-“Give the bounds of date times available in 2014 for sales and revenue where they relate to cities in the UK”
+“Give the bounds of date times available values of test”
 
 ```language-http
-(base)/time?time_from=2014-01-01&time_to=2014-12-31&bounds=true&context=[Country:UK][City]&signal={sales}{revenue}
+(base)/discover/time?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=bounds&signal={test}
 ```
 
 ##Context
