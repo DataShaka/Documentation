@@ -330,3 +330,100 @@ Filters the results to times for data that has the context 'Brand:X'.
   ]
 }
 ```
+
+##Shape
+
+A 'shape' is the combination of context types and signal that make up part of the signature of a point (Without time or value).
+A 'set' is the combination of the context pairs and signal that make up part of the signature of a point. (Without time or value)
+
+**Route** 
+
+```language-http
+(base)/discover/shape
+```
+
+**Parameters**
+
+_groupspace_ (required)
+
+```
+groupspace=Demo
+```
+
+_time from_ (required)
+
+```
+time_from=ISO8601
+```
+use ```time_from=1901``` for 'earliest possible date'
+
+_time to_ (required)
+
+```
+time_to=ISO8601
+```
+use ```time_to=2099``` for 'latest possible date'
+
+_mode_ (optional)
+
+```
+mode=shape
+```
+
+Possible modes:
+- None: equivalent to not providing mode Causes the same result as (default).
+- Sets: The sets of Context pairs that exist against points with signals
+- Shape: (default) The Context type shapes of points with signals
+
+_signal_ (optional)
+
+```
+signal={Sales}
+```
+
+Filters the results to times for data that has the signal 'Sales'.
+
+_context_ (optional)
+
+```
+context=[Brand:X]
+```
+
+Filters the results to times for data that has the context 'Brand:X'.
+
+**Retun Object(s)**
+
+```language-json
+{"shape": [{"context_types":[],"signal":""}]}
+{"sets": [{"context":[{"type":"name"}],"signal":""}]}
+```
+
+**Example**
+
+“Give the unique shapes of context and signals for all time”
+
+```language-http
+(base)/discover/context.json?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=shape
+```
+
+**Returns**
+
+```language-json
+{
+  "shapes": [
+    {
+      "context_types": [
+        "Brand",
+        "Country"
+      ],
+      "signal": "Sales"
+    },
+    {
+      "context_types": [
+        "Brand",
+        "Contry"
+      ],
+      "signal": "Revenue"
+    },
+}
+```
