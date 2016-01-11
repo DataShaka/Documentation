@@ -70,27 +70,27 @@ https://api.datashaka.com/v1/discover/groupspace.json&token=<your token>
 
 **Parameters**
 
-_groupspace_ (required)
+###_groupspace_ (required)
 
 ```
 groupspace=Demo
 ```
 
-_time from_ (required)
+###_time from_ (required)
 
 ```
 time_from=ISO8601
 ```
 use ```time_from=1901``` for 'earliest possible date'
 
-_time to_ (required)
+###_time to_ (required)
 
 ```
 time_to=ISO8601
 ```
 use ```time_to=2099``` for 'latest possible date'
 
-_mode_ (optional)
+###_mode_ (optional)
 
 ```
 mode=bounds
@@ -100,7 +100,7 @@ Possible modes:
 - None: (default) equivalent to not providing mode
 - Bounds: returns only the **first** and **last** date in the requested range
 
-_signal_ (optional)
+###_signal_ (optional)
 
 ```
 signal={Sales}
@@ -108,7 +108,7 @@ signal={Sales}
 
 Filters the results to times for data that has the signal 'Sales'.
 
-_context_ (optional)
+###_context_ (optional)
 
 ```
 context=[Brand:X]
@@ -151,27 +151,27 @@ Filters the results to times for data that has the context 'Brand:Martini'.
 
 **Parameters**
 
-_groupspace_ (required)
+###_groupspace_ (required)
 
 ```
 groupspace=Demo
 ```
 
-_time from_ (required)
+###_time from_ (required)
 
 ```
 time_from=ISO8601
 ```
 use ```time_from=1901``` for 'earliest possible date'
 
-_time to_ (required)
+###_time to_ (required)
 
 ```
 time_to=ISO8601
 ```
 use ```time_to=2099``` for 'latest possible date'
 
-_mode_ (optional)
+###_mode_ (optional)
 
 ```
 mode=context
@@ -185,7 +185,7 @@ Possible modes:
 - Sets: The sets of Context pairs that exist against points
 - Shape: The Context type shapes of points
 
-_signal_ (optional)
+###_signal_ (optional)
 
 ```
 signal={Sales}
@@ -193,7 +193,7 @@ signal={Sales}
 
 Filters the results to times for data that has the signal 'Sales'.
 
-_context_ (optional)
+###_context_ (optional)
 
 ```
 context=[Brand:X]
