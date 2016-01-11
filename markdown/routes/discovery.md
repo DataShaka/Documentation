@@ -120,8 +120,8 @@ mode=bounds
 ```
 
 Possible modes:
-- None: (default) equivalent to not providing mode
-- Bounds: returns only the **first** and **last** date in the requested range
+- ```None```: (default) equivalent to not providing mode
+- ```Bounds```: returns only the **first** and **last** date in the requested range
 
 _signal_ (optional)
 
@@ -201,12 +201,12 @@ mode=context
 ```
 
 Possible modes:
-- None: equivalent to not providing mode Causes the same result as (default).
-- Context: (default) all Context pairs
-- Type: Only the 'Keys' (Context Type) of the Context pairs
-- Name: Only the 'Values' (Context Name) of the Context pairs
-- Sets: The sets of Context pairs that exist against points
-- Shape: The Context type shapes of points
+- ```None```: equivalent to not providing mode Causes the same result as (default).
+- ```Context```: (default) all Context pairs
+- ```Type```: Only the 'Keys' (Context Type) of the Context pairs
+- ```Name```: Only the 'Values' (Context Name) of the Context pairs
+- ```Sets```: The sets of Context pairs that exist against points
+- ```Shape```: The Context type shapes of points
 
 _signal_ (optional)
 
@@ -228,9 +228,17 @@ Filters the results to times for data that has the context 'Brand:X'.
 
 ```language-json
 {"context": []}
+```
+```language-json
 {"types": []}
+```
+```language-json
 {"names": []}
+```
+```language-json
 {"sets": []}
+```
+```language-json
 {"shapes": []}
 ```
 
@@ -371,9 +379,9 @@ mode=shape
 ```
 
 Possible modes:
-- None: equivalent to not providing mode Causes the same result as (default).
-- Sets: The sets of Context pairs that exist against points with signals
-- Shape: (default) The Context type shapes of points with signals
+- ```None```: equivalent to not providing mode Causes the same result as (default).
+- ```Sets```: The sets of Context pairs that exist against points with signals
+- ```Shape```: (default) The Context type shapes of points with signals
 
 _signal_ (optional)
 
@@ -395,6 +403,8 @@ Filters the results to times for data that has the context 'Brand:X'.
 
 ```language-json
 {"shape": [{"context_types":[],"signal":""}]}
+```
+```language-json
 {"sets": [{"context":[{"type":"name"}],"signal":""}]}
 ```
 
