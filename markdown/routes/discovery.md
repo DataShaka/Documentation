@@ -29,6 +29,29 @@ token=<your token>
 https://api.datashaka.com/v1/
 ```
 
+##HTTP Methods
+
+###GET
+- Provide your groupspace (as required) and token (always required) in the URL
+- Provide parameters in the name=value&name2=value2 form in the url
+- Tractor is not available in GET requiest
+
+###POST
+- Provide your groupspace (as required) and token (always required) in the URL
+- Provide your parameters as the post document in JSON with the ```context-type``` ```application/json```
+- Tractor and Tractors can also be included in the POST document
+
+**Example**
+
+```language-json
+{
+    "time_from":"2015-01-01",
+    "time_to":"2016-Q1",
+    "signal":"{example}",
+    "context":"[Other:Example]",
+}
+```
+
 ##Groupspace
 
 **Route**
