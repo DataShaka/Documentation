@@ -1,32 +1,64 @@
-#Discovery route
+#Discovery routes
 
-Discovery routes allow you to explore Katsu data in two main ways:
+- Discovery routes allow you to discover what is available for query in your Katsu data. You could also describe them as **meta data** routes. 
+- Discovery routes work off the stored data and so relate to points of data you have available.
+- Discovery routes take the same base parameters as retrieve routes and so can be filtered in the same way.
+- Where applicable a 'mode' parameter can be specified to give a variation on what kind of data is returned.
 
-- Which elements of T, C, S are available within a stored set
-- What connected sets of data are available within a unified set.
-- All GET routes
- 
- 
- 
+##Version
+
+```
+    V1.0
+```
+
+##Formatters
+
+```
+    .json
+```
+
+##Authentication Parameters
+
+```
+    token=<your token>
+```
+
+##Base
+
+```language-http
+https://api.datashaka.com/v1/
+```
+
 ##Groupspace
 
 **Route**
 
 ```language-http
-(base)/groupspace
+(base)/discover/groupspace.json
 ```
 
 **Parameters**
 
 None
 
+
 **Example**
 
 “Give me the list of groupspaces in my account”
 
 ```language-http
-(base)/groupspace
+https://api.datashaka.com/v1/discover/groupspace.json&token=<your token>
 ```    
+
+**Returns**
+
+```language-json
+    {
+        "groupspaces": [
+            "Main"
+        ]
+    }
+```
 
 ##Time
 
