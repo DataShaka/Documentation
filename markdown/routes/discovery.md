@@ -142,7 +142,7 @@ Filters the results to times for data that has the context 'Brand:Martini'.
 **Retun Object(s)**
 
 ```language-json
-{"times": []}
+{"times": [""]}
 ```
 
 **Example**
@@ -227,19 +227,19 @@ Filters the results to times for data that has the context 'Brand:X'.
 **Retun Object(s)**
 
 ```language-json
-{"context": []}
+{"context": [{"type":"name"}]}
 ```
 ```language-json
-{"types": []}
+{"types": [""]}
 ```
 ```language-json
-{"names": []}
+{"names": [""]}
 ```
 ```language-json
-{"sets": []}
+{"sets": [{"type":"name"}]}
 ```
 ```language-json
-{"shapes": []}
+{"shapes": [""]}
 ```
 
 **Example**
@@ -318,7 +318,7 @@ Filters the results to times for data that has the context 'Brand:X'.
 **Retun Object(s)**
 
 ```language-json
-{"signals": []}
+{"signals": [""]}
 ```
 
 **Example**
