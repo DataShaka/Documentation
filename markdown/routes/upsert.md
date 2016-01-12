@@ -2,7 +2,7 @@
 #Upsert route
 
 - The Upsert route allows you to insert new data and/or update existing data in an given groupspace for a speficic authentication token.
-- The data upserted is readily available for [query](retrieve.md) or discovery(discover.md)..
+- The data upserted is readily available for [query](retrieve.md) or discovery(discovery.md)..
 - The data can be either formatted as TCSV (i.e. .tcsv)  or JTCSV (i.e. .json)
 
 
@@ -47,7 +47,7 @@ https://api.datashaka.com/v1/
 
 **Example using JTCSV**
 
-https://api.datashaka.com/v1/upsert.json?token=<your token>&groupspace=<your groupspace>
+```https://api.datashaka.com/v1/upsert.json?token=<your token>&groupspace=<your groupspace>```
 
 ```language-json
 {
@@ -76,7 +76,7 @@ https://api.datashaka.com/v1/upsert.json?token=<your token>&groupspace=<your gro
 
 **Example using TCSV**
 
-https://api.datashaka.com/v1/upsert.tcsv?token=<your token>&groupspace=<your groupspace>
+```https://api.datashaka.com/v1/upsert.tcsv?token=<your token>&groupspace=<your groupspace>```
 
 ```language-katsu
 2015-01-01T00:00:00.000[Brand:X][Country:UK]{Sales:100}
