@@ -64,12 +64,12 @@ Within a unified set of Katsu data, an element (T,C,S or V) can be *Connected* w
 ###Discovery
 Discovery is the process of query to determine what data is available. Discovery queries are used to examine the **meta data** of a unified set of Katsu.
 
-Check out the [Discovery API Route](routes/discovery.html) page to learn more.
+Check out the [Discovery API Route](routes/discovery.md) page to learn more.
 
 ###Retrieve
 Retrieve queries are used to get a portion of the overall unified set. For example, one month of data for two particular signals.
 
-Check out the [Retrieval API Route](routes/retrieve.html) page to learn more.
+Check out the [Retrieval API Route](routes/retrieve.md) page to learn more.
 
 ###Exploration
 
