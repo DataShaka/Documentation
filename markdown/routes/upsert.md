@@ -53,8 +53,7 @@ https://api.datashaka.com/v1/
 ```https://api.datashaka.com/v1/upsert.json?token=<your token>&groupspace=<your groupspace>```
 
 ```language-json
-{
-    [
+[
   {
     "time": "2015-01-01T00:00:00.000",
     "context": {
@@ -73,8 +72,7 @@ https://api.datashaka.com/v1/
     "signal": "Sales",
     "value": 110
   }
-  ]
-}
+]
 ```
 
 **Example using TCSV**
