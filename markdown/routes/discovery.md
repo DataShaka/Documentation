@@ -99,14 +99,14 @@ _groupspace_ (required)
 groupspace=Demo
 ```
 
-_time from_ (required)
+_time from_ (optional)
 
 ```
 time_from=ISO8601
 ```
 use ```time_from=1901``` for 'earliest possible date'
 
-_time to_ (required)
+_time to_ (optional)
 
 ```
 time_to=ISO8601
@@ -180,14 +180,14 @@ _groupspace_ (required)
 groupspace=Demo
 ```
 
-_time from_ (required)
+_time from_ (optional)
 
 ```
 time_from=ISO8601
 ```
 use ```time_from=1901``` for 'earliest possible date'
 
-_time to_ (required)
+_time to_ (optional)
 
 ```
 time_to=ISO8601
@@ -285,14 +285,14 @@ _groupspace_ (required)
 groupspace=Demo
 ```
 
-_time from_ (required)
+_time from_ (optional)
 
 ```
 time_from=ISO8601
 ```
 use ```time_from=1901``` for 'earliest possible date'
 
-_time to_ (required)
+_time to_ (optional)
 
 ```
 time_to=ISO8601
@@ -358,14 +358,14 @@ _groupspace_ (required)
 groupspace=Demo
 ```
 
-_time from_ (required)
+_time from_ (optional)
 
 ```
 time_from=ISO8601
 ```
 use ```time_from=1901``` for 'earliest possible date'
 
-_time to_ (required)
+_time to_ (optional)
 
 ```
 time_to=ISO8601
