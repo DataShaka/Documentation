@@ -23,8 +23,7 @@
 
 - [Routes](routes.html)
 
-    - [Discovery Route](/routes/discovery.html)
-    - [Retrieval Route](/routes/retrieve.html)
-    - [Upsert Route](/routes/upsert.html)
+    - [Discovery Route](/routes/discovery.md)
+    - [Retrieval Route](/routes/retrieve.md)
+    - [Upsert Route](/routes/upsert.md)
     - Orchestration Route
-
