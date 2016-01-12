@@ -2,9 +2,12 @@
 #Upsert route
 
 - The Upsert route allows you to insert new data and/or update existing data in an given groupspace for a speficic authentication token.
-- The data upserted is readily available for [query](retrieve.md) or discovery(discovery.md)..
+- The data upserted is readily available for [query](retrieve.md) or [discovery](discovery.md)..
 - The data can be either formatted as TCSV (i.e. .tcsv)  or JTCSV (i.e. .json)
-
+- After the upsert is completed , a JSON formatted response is returned with 
+  - ```IsSuccess``` : `true` or `false`
+  - ```Warning``` : typically, when the data document is empty
+  - ```Error``` : Upsert didnt complete and the data is not in live
 
 ##Version
 
