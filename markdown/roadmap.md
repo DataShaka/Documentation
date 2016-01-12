@@ -25,6 +25,6 @@
 
     - [Discovery Route](routes/discovery.html)
     - [Retrieval Route](routes/retrieve.html)
-    - Exploration Route
+    - [Upsert Route](routes/upsert.html)
     - Orchestration Route
 
