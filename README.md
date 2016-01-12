@@ -2,26 +2,26 @@
 
 ##Table of contents
 
-- [Principles](principles.html)
+- [Principles](principles.md)
 
-    - [Type of API](./principles.html#type-api)
-    - [Katsu](./principles.html#katsu)
-    - [Basics](./principles.html#basics)
-    - [HTTPS](./principles.html#https)
-    - [Key Routes](./principles.html#routes)
-    - [Versioning](./principles.html#versionning)
-    - [Authentication](./principles.html#authentication)
-    - [Convention](./principles.html#convention)
-    - [Rate Limits](./principles.html#rate-limits)
+    - [Type of API](./principles.md#type-api)
+    - [Katsu](./principles.md#katsu)
+    - [Basics](./principles.md#basics)
+    - [HTTPS](./principles.md#https)
+    - [Key Routes](./principles.md#routes)
+    - [Versioning](./principles.md#versionning)
+    - [Authentication](./principles.md#authentication)
+    - [Convention](./principles.md#convention)
+    - [Rate Limits](./principles.md#rate-limits)
 
-- [Glossary of terms](glossary.html)
+- [Glossary of terms](glossary.md)
 
-    - [Katsu](glossary.html#katsu)
-    - [Queries](glossary.html#queries)
-    - [Orchestration](glossary.html#orchestration)
-    - [API Implementation](glossary.html#implementation)
+    - [Katsu](glossary.md#katsu)
+    - [Queries](glossary.md#queries)
+    - [Orchestration](glossary.md#orchestration)
+    - [API Implementation](glossary.md#implementation)
 
-- [Routes](routes.html)
+- [Routes](routes.md)
 
     - [Discovery Route](/routes/discovery.md)
     - [Retrieval Route](/routes/retrieve.md)
