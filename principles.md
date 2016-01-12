@@ -14,12 +14,12 @@ Within any set individual Context pairs as well as sets of pairs and Signals sho
 ###<a id="routes">Key Routes</a>
 The key routes discussed in the document fall under two broad categories :
 
-1. **[Discovery](routes/discovery.html)**
+1. **[Discovery](routes/discovery.md)**
     a. What possible values of T, C, S and V exist within stored data.
     b. What values of T, C, S and V are connected and create *sets*.
 
 
-2. **[Data Retrieval](routes/retrieve.html)**
+2. **[Data Retrieval](routes/retrieve.md)**
     a. Goal orientated queries for data.
     b. Basic operations on the queried set
         (i) These operations only affect the queried data not the stored set.
