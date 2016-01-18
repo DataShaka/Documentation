@@ -1,4 +1,4 @@
-#Retrieve routes
+#Retrieve route
 
 
 - The Retrieve route allows you to query and/or manipulate stored data from a given groupspace
