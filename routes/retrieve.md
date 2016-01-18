@@ -2,7 +2,7 @@
 
 
 - The Retrieve route allows you to query and/or manipulate stored data from a given groupspace
-- A authentication token is needed to make any query.
+- An authentication token is needed to make any query.
 
 ##Version
 
