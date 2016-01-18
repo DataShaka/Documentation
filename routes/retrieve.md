@@ -59,8 +59,8 @@ https://api.datashaka.com/v1/
 All parameters are optional.
 When no query parameter is filled in , the API will simply return all the data stored.
 
-| Name | Type |Connected |Description |Availability |
-|----|
+| Name | Type |Connected |Description |Availability|
+|----|----|----|----|----|
 |time_from  |ISO8601| True  |Optional. The first Time from which all Points must match (inclusive)  |v1.0|
 |time_to  |ISO8601| True  |Optional. The last Time to which all Points must match (inclusive) |APIV0.2|
 |signal |Signal list| True  |Optional. A list of Signals that Points must match e.g. {Signal 1}{Signal 2}{Signal 3}|v1.0|
