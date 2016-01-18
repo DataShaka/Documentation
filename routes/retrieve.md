@@ -71,6 +71,8 @@ When no query parameter is filled in , the API will simply return all the data s
 
 ## Examples
 
+Examples below use token `YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA` for the *Demo* account.
+
 ### GET Examples
 
 Query to retrieve data of year 2013 in groupspace "Community" in JSON format
