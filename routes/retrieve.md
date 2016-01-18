@@ -76,45 +76,45 @@ When no query parameter is filled in , the API will simply return all the data s
 Query to retrieve data of year 2013 in groupspace "Community" in JSON format
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_from=2013&time_to=2013
+https://api.datashaka.com/v1.0/retrieve.json?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_from=2013&time_to=2013
 ```  
 
 Query to retrieve data of *from* year 2013 in groupspace "Community" in JSON format
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_from=2013
+https://api.datashaka.com/v1.0/retrieve.json?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_from=2013
 ```  
 
 Query to retrieve data of *up to* year 2013 in groupspace "Community" in JSON format
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013
+https://api.datashaka.com/v1.0/retrieve.json?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013
 ``` 
 
 Query to retrieve {Low}{High} and {Close} values of year 2013 in groupspace "Community" in JSON format
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}
+https://api.datashaka.com/v1.0/retrieve.json?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}
 ```  
 
 Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance only in groupspace "Community" in JSON format 
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}&context=[Source:YahooFinance]
+https://api.datashaka.com/v1.0/retrieve.json?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}&context=[Source:YahooFinance]
 ```  
 
 Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format 
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}&context=[Source:YahooFinance][Company:Microsoft]
+https://api.datashaka.com/v1.0/retrieve.json?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}&context=[Source:YahooFinance][Company:Microsoft]
 ```  
 
 ### POST Examples
 
-Query to retrieve data of year 2013 in groupspace "Community" in JSON format
+Query to retrieve data of year 2013 in groupspace "Community" in TCSV format
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+https://api.datashaka.com/v1.0/retrieve.tcsv?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
 ```  
 
 ```language-json
@@ -124,11 +124,11 @@ https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8
 }
 ```
 
-Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format 
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in TCSV format 
 
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+https://api.datashaka.com/v1.0/retrieve.tcsv?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
 ```  
 
 ```language-json
@@ -140,12 +140,12 @@ https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8
 }
 ```
 
-Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format. 
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in TCSV format. 
 Monthly average per signal, ordered by time
 
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+https://api.datashaka.com/v1.0/retrieve.tcsv?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
 ```  
 
 ```language-json
@@ -158,12 +158,12 @@ https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8
 }
 ```
 
-Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format. 
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in TCSV format. 
 Monthly average per signal, ordered by time
 
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+https://api.datashaka.com/v1.0/retrieve.tcsv?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
 ```  
 
 ```language-json
@@ -176,11 +176,11 @@ https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8
 }
 ```
 
-Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format. 
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in TCSV format. 
 Separate values under and above 30 for the {Low} signal
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+https://api.datashaka.com/v1.0/retrieve.tcsv?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
 ```  
 
 ```language-json
@@ -198,11 +198,11 @@ https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8
 ```
 
 
-Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format. 
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in CSV format. 
 Applies sum/average aggregation to Google/Microsoft then , order by time.
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+https://api.datashaka.com/v1.0/retrieve.csv?token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
 ```  
 
 ```language-json
