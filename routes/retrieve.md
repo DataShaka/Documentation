@@ -1,84 +1,222 @@
-#Retrieve route
+#Retrieve routes
 
-Data Retrieval routes provide access to *Blender* the Katsu query tool. These
 
-- Goal orientated queries for data.
-- Basic operations on the queried set
-- Streamed data (TBC)
-- GET and POST. Post is used where the query goes over the GET length limit.
+- The Retrieve route allows you to query and/or manipulate stored data from a given groupspace
+- A authentication token is needed to make any query.
 
- a. ***Under Consideration***  When POST is used, the post body should be a **form** and as such in the form key=value&key=value as with GET
-	- For this kind of query a content type of **multipart/form-data** should be used when making the query.
+##Version
 
- b.	***Under Consideration*** For complicated queries a JSON object may be used.
-	- For this kind of query a content type of **text/json** should be used when making the query.
-	- This json object should be in the follow form
-```language-javascript
-    {
-    parameter_name:parameter value,
-    parameter_name: [parameter value,parameter value]
-    }
 ```
-	- If a parameter can have an object representation this will be given with the parameter specification in the main route description. But will conform to the following:
-```language-javascript
+V1.0
+```
+
+##Formatters
+
+```
+.json
+```
+```
+.tcsv
+```
+```
+.csv
+```
+```
+.html
+```
+
+##Authentication Parameters
+
+```
+token=<your token>
+```
+```
+groupspace=<your groupspace>
+```
+
+##Base
+
+```language-http
+https://api.datashaka.com/v1/
+```
+
+##HTTP Methods
+
+###GET
+- Provide your groupspace (as required) and token (always required) in the URL
+- Provide parameters in the name=value&name2=value2 form in the url
+- Tractor is not available in GET requiest
+
+  
+###POST
+- Provide your groupspace (as required) and token (always required) in the URL
+- Provide your parameters as the post document in JSON with the ```context-type``` ```application/json```
+- Tractor and Tractors can also be included in the POST document
+
+
+## Parameters
+
+All parameters are optional.
+When no query parameter is filled in , the API will simply return all the data stored.
+
+| Name | Type |Connected |Description |Availability |
+|time_from  |ISO8601| True  |Optional. The first Time from which all Points must match (inclusive)  |v1.0|
+|time_to  |ISO8601| True  |Optional. The last Time to which all Points must match (inclusive) |APIV0.2|
+|signal |Signal list| True  |Optional. A list of Signals that Points must match e.g. {Signal 1}{Signal 2}{Signal 3}|v1.0|
+|context  |Context list|  True  |Optional. A list of Context that Points must match e.g. [Type1:Name1][Type2:Name2][Type3:Name3] |v1.0|
+|tractors| List of Tractor scripts| N/A| Optional. An array of Tractor script to be executed post-query in parallel | v1.0 POST Only|
+|tractor| A Tractor scripts| N/A| Optional. A Tractor script to be executed post-query and after `tractors`  have returned data | v1.0 POST Only|
+
+
+## Examples
+
+### GET Examples
+
+Query to retrieve data of year 2013 in groupspace "Community" in JSON format
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_from=2013&time_to=2013
+```  
+
+Query to retrieve data of *from* year 2013 in groupspace "Community" in JSON format
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_from=2013
+```  
+
+Query to retrieve data of *up to* year 2013 in groupspace "Community" in JSON format
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013
+``` 
+
+Query to retrieve {Low}{High} and {Close} values of year 2013 in groupspace "Community" in JSON format
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}
+```  
+
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance only in groupspace "Community" in JSON format 
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}&context=[Source:YahooFinance]
+```  
+
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format 
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community&time_to=2013&signal={Low}{High}{Close}&context=[Source:YahooFinance][Company:Microsoft]
+```  
+
+### POST Examples
+
+Query to retrieve data of year 2013 in groupspace "Community" in JSON format
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+```  
+
+```language-json
 {
-    parameter_name:{
-        field_name:field value,
-        field_name:[field value,field value]
-        field_name:{
-            field_object_field:field object field value
-        }
-    }
+    "time_from":  "2013",
+    "time_to":  "2013"
 }
 ```
 
-##Retrieve
-
-**URL**
-(base)/retrieve
-
-**Parameters**
-
-#####Basic Query
-
-| Name | Type |Connected |Description |Availability |
-|--------|--------|--------|--------|--------|
-|**Time is specified by a single point**	||||APIV0.2|
-|time	|ISO8601|	True	|A single Time specification which all Points must match. E.g. yyyy-mm matches all points for the given month.|	APIV0.2|
-|*OR a set of ranges*	||||Under consideration|
-|time_inrange	|Comma separated list of ISO8601 pipe separated pairs	|True	|A set of Time ranges that Points must fall into.	|Under consideration|
-|*OR a start and/or end time. Both is optional.*	||||APIV0.2|
-|time_from	|ISO8601|	True	|The first Time from which all Points must match (inclusive)	|APIV0.2|
-|time_to	|ISO8601|	True	|The last Time to which all Points must match (inclusive)	|APIV0.2|
-|**Signal and Context are both optional**	||||Not yet implemented|
-|signal	|Signal list|	True	|A list of Signals that Points must match|	Not yet implemented APIV0.2 provides a comma separated list approach|
-|context	|Context list|	True	|A list of Context that Points must match	|APIV0.2|
-|**Value is specified by a single numeric valu**e	||||Not yet implemented|
-|value|	Value list	|True	|A list of Values that Points must match	|Not yet implemented|
-|*OR a range. Both is optional*	||||Not yet implemented|
-|value_greaterthan	|Value	|True	|A single Value that Points must be greater than (Inclusive)|	Not yet implemented|
-|value_lessthan	|Value	|True	|A single Value that Points must be less than (Inclusive)	N|ot yet implemented|
-|*Or a set of ranges*	||||Under consideration|
-|value_inrange	|Comma separated list of pipe separated Value bounds|	True|	A list of Value ranges that Points must fall within (Inclusive)	|Under consideration|
-
-##Manipulation
-***Under consideration***
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format 
 
 
-Manipulation uses an embodiment of the [Tractor orchestration framework](../../Tractor/Documentation/html/tractor.html) to define pipelines on points returned from the Basic Query (defined above)
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+```  
 
-| Name | Type |Connected |Description |Availability |
-|--------|--------|--------|--------|--------|
-|Tractor	|Tractor script definition	|N/A|	A Tractor script defining the manipulation of data|	Not yet implemented POST ONLY |
-
-**Example**
-
-Tractor post object : Give me total (sum) sales and revenue totals by City for January, February and March
-```language-tractor
+```language-json
 {
- tractor:group by week ~>filter {N Weighted}{Weighted Base} ~> calculate {N Weighted}/{Weighted Base} returns {N Value} ~> sum,
+    "time_from":  "2013",
+    "time_to":  "2013",
+    "signal":"{Low}{High}{Close}",
+    "context":"[Source:YahooFinance][Company:Microsoft]"
 }
 ```
 
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format. 
+Monthly average per signal, ordered by time
 
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+```  
+
+```language-json
+{
+    "time_from":  "2013",
+    "time_to":  "2013",
+    "signal":"{Low}{High}{Close}",
+    "context":"[Source:YahooFinance][Company:Microsoft]",
+    "tractor":" sort by time ~> group by month ~> average"
+}
+```
+
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format. 
+Monthly average per signal, ordered by time
+
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+```  
+
+```language-json
+{
+    "time_from":  "2013",
+    "time_to":  "2013",
+    "signal":"{Low}{High}{Close}",
+    "context":"[Source:YahooFinance][Company:Microsoft]",
+    "tractor":" sort by time ~> group by month ~> average"
+}
+```
+
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format. 
+Separate values under and above 30 for the {Low} signal
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+```  
+
+```language-json
+{
+    "time_from":  "2013",
+    "time_to":  "2013",
+    "signal":"{Low}",
+    "context":"[Source:YahooFinance][Company:Microsoft]",
+    "tractors":[
+        "filter {Low:<30} ~> replace {Low} with {Low Under 30}",
+        "filter {Low:>30} ~> replace {Low} with {Low Above 30}"
+        ]
+}
+
+```
+
+
+Query to retrieve {Low}{High} and {Close} values of year 2013 for Source YahooFinance & Company Microsoft only in groupspace "Community" in JSON format. 
+Applies sum/average aggregation to Google/Microsoft then , order by time.
+
+```language-http
+https://api.datashaka.com/v1/discover/groupspace.json&token=YM36SWub5UysJBaY5tC8Xg-odBXcRBjRkKLAKP9xSrSKA&groupspace=Community
+```  
+
+```language-json
+{
+    "time_from":  "2013",
+    "time_to":  "2013",
+    "signal":"{Low}{High}",
+    "context":"[Source:YahooFinance]",
+    "tractors":[
+        "filter [Company:Google]{Low} ~> group by month ~> sum",
+        "filter [Company:Microsoft]{High} ~> group by month ~> sum"
+        ],
+        "tractor":"sort by time"
+}
+```
+
+**The full list of Tractor verbs is documented [here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/DataShaka/tractor/master/Documentation/html/verbs.html)**
 
