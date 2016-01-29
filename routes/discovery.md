@@ -34,7 +34,7 @@ https://api.datashaka.com/v1/
 ###GET
 - Provide your groupspace (as required) and token (always required) in the URL
 - Provide parameters in the name=value&name2=value2 form in the url
-- Tractor is not available in GET requiest
+- Tractor is not available in GET request
 
 ###POST
 - Provide your groupspace (as required) and token (always required) in the URL
