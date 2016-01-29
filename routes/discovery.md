@@ -70,7 +70,7 @@ None
 “Give me the list of groupspaces in my account”
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=<your token>
+https://api.datashaka.com/v1/discover/groupspace.json?token=<your token>
 ```    
 
 **Returns**
