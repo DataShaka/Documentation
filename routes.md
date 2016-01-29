@@ -4,8 +4,8 @@
 
 | Route | Description | Implementation |
 |--------|--------|--------|
-|  **Discovery**     | Discovery routes allow you to explore Katsu data        | [Documentation](routes/discovery.html) |
-|  **Retrieval**     | Goal orientated queries for Katsu data        | [Documentation](routes/retrieve.html) |
+|  **Discovery**     | Discovery routes allow you to explore Katsu data        | [Documentation](routes/discovery.md) |
+|  **Retrieval**     | Goal orientated queries for Katsu data        | [Documentation](routes/retrieve.md) |
 |  **Exploration**     | Explore Katsu Data       | Out of scope |
 |  **Orchestration**     | Orchstrate Katsu data       | Out of scope |
 
