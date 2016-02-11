@@ -33,11 +33,13 @@ https://api.datashaka.com/v1/
 
 ###GET
 - Provide your groupspace (as required) and token (always required) in the URL
+- If any route uses a 'mode' parameter this should also be given in the URL for GET requests
 - Provide parameters in the name=value&name2=value2 form in the url
 - Tractor is not available in GET requiest
 
 ###POST
 - Provide your groupspace (as required) and token (always required) in the URL
+- If any route uses a 'mode' parameter this should also be given in the URL for POST requests
 - Provide your parameters as the post document in JSON with the ```context-type``` ```application/json```
 - Tractor and Tractors can also be included in the POST document
 
