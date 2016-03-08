@@ -18,7 +18,7 @@ We chose ISO8601 (as opposed to [Excel date time numbers](http://excelribbon.tip
 Within DataShaka technology there are currently two kinds of calendars you can use. The default calendar or a custom calendar.
 
 ###<a id="default-cal">The Default Calendar</a>
-This is basically the [ISO8601](#iso8601) [Gregorian](http://en.wikipedia.org/wiki/Gregorian_calendar) calendar. I say 'basically' because we have had to make some decisions up front on the way this calendar is implemented because comptuers and 'planetary motion' works in different ways.
+This is basically the [ISO8601](#iso8601) [Gregorian](http://en.wikipedia.org/wiki/Gregorian_calendar) calendar. I say 'basically' because we have had to make some decisions up front on the way this calendar is implemented because computers and 'planetary motion' works in different ways.
 
 ###<a id="custom-cal">Custom Calendars</a>
 These are calendars that you can specify yourself! They are made up of intervals and definitions. Intervals are alternative definitions of chunks of time (month, quarter, campaign, etc.) and definitions are fundamental alterations to the default calendar (for example, on what day a week starts. Sunday, Monday, etc.)
