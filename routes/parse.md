@@ -77,7 +77,9 @@ Content-Type: ```application/json```
 
 Url: 
     ```token=<your token>```
+
     ```name=<required parser name>``` see following list.
+    
     optional ```dateoverride=<yyyy-MM-ddTHH:mm:ss.mmm>``` overrides any default dates (0001-01-01T00:00:00.000) with the given date. This is used when the data given is for 'at the point of query' rather than with a specified date.
 
 Post Body: `sysomos document in xml`
