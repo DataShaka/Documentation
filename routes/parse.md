@@ -60,7 +60,7 @@ Content-Type: ```application/json```
 
 Url: ```token=<your token>```
 
-Post Body: <quandl document in json>
+Post Body: `quandl document in json`
 
 ###Sysomos
 
@@ -80,13 +80,17 @@ Url:
     ```name=<required parser name>``` see following list.
     optional ```dateoverride=<yyyy-MM-ddTHH:mm:ss.mmm>``` overrides any default dates (0001-01-01T00:00:00.000) with the given date. This is used when the data given is for 'at the point of query' rather than with a specified date.
 
-Post Body: <sysomos document in xml>
+Post Body: `sysomos document in xml`
 
 ####Available names
 
     - `map analytics` (url encoded `map+analytics`). This parses a sysomos map analytics query response. A date override is often needed with this parser.
+
     - `map search` (url encoded `map+search`). This parses a sysomos map serach query response.
+    
     - `twitter profiles` (url encoded `twitter+profiles`). This parses a sysomos list of twitter profiles. A date override is always needed with this parser as the data is given related to the time of the sysomos query and not held in the response.
+    
     - `map analytics twitter reach` (url encoded `map+analytics+twitter+reach`). This parses a sysomos twitter reach query response.A date override is always needed with this parser as the data is given related to the time of the sysomos query and not held in the response.
+    
     - `map analytics twitter profiles` (url encoded `map+analytics+twitter+profiles`). This parses a sysomos twitter profiles list. A date override is always needed with this parser as the data is given related to the time of the sysomos query and not held in the response.
 
