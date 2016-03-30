@@ -56,6 +56,6 @@ returns
 ```language-katsu
 2014-01-01[Brand:Adidas][Category:Normal][Country:UK][Department:Clothing]{Net:12}{Tax:1}{Gross:13}
 2014-01-02[Brand:Adidas][Category:Normal][Country:UK][Department:Clothing]{Net:12}{Tax:10}{Gross:22}
-2014-01-01[Brand:Nike][Category:Hight Performer][Country:France][Department:Clothing]{Net:25}{Tax:3}{Gross:28}
+2014-01-01[Brand:Nike][Category:High Performer][Country:France][Department:Clothing]{Net:25}{Tax:3}{Gross:28}
 2014-02-01[Brand:Adidas][Category:Normal][Country:France][Department:Clothing][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
 ```
