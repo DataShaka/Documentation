@@ -7,7 +7,7 @@ The  **insert** verb is used to add Katsu elements to data.
 ##Syntax
 
 ```language-tractor
-	~> insert chopstick where chopstick~>
+~> insert chopstick where chopstick~>
 ```
 
 ##Examples
