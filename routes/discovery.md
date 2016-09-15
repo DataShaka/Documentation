@@ -72,7 +72,7 @@ None
 “Give me the list of groupspaces in my account”
 
 ```language-http
-https://api.datashaka.com/v1/discover/groupspace.json&token=<your token>
+https://api.datashaka.com/v1/discover/groupspace.json?token=<your token>
 ```    
 
 **Returns**
@@ -415,7 +415,7 @@ Filters the results to times for data that has the context 'Brand:X'.
 “Give the unique shapes of context and signals for all time”
 
 ```language-http
-(base)/discover/context.json?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=shape
+(base)/discover/context.json?token.json=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=shape
 ```
 
 **Returns**
