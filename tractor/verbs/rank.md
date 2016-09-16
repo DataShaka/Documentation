@@ -7,7 +7,8 @@ The **rank** verb returns the rank of a signal across the given context type wit
 Two methods of ranking are currently available:
 
 - **Standard**: The rank of a point is one plus the number of the rank that came before the point in question. Equal values are not taken into account, points are numbered as they came through (1st, 2nd, 3rd etc)
-- **Olympic**: the rank of a point is one plus the number of the rank that came before the point in question. Points with equal values are given the same rank. For example you can have a rank of joint 2nd.
+- **Olympic**: the rank of a point is one plus the number of the rank that came before the point in question. Points with equal values are given the same rank. For example you can have a rank of joint 2nd. Also known as 1223 ranking.
+- **Competition**: the rank of a point is one plus the number of the rank that came before. Points with equal value are given the same rank and following points 'skip'. Also known as 1224 ranking.
 
 The first point in the set is always ranked as 1.
 
@@ -36,7 +37,7 @@ OneOrMore(NonTerminal('DATA PACKAGE'))
 Options:
 
 - [Context Type] : the name of the context type on which the rank is performed.
-- METHOD : 'standard' or 'olympic'. If not provided, the default is 'standard'.
+- METHOD : 'standard' or 'olympic' or 'competition'. If not provided, the default is 'standard'.
 
 
 ##Examples
