@@ -111,7 +111,7 @@ Take the following data set:
 ```
 The following Tractor script:
 ```language-tractor
-~> rank olympic [Subgroup] ~>
+~> rank olympic [Brand] ~>
 ```
 returns
 ```language-katsu
