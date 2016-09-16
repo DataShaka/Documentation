@@ -124,6 +124,36 @@ returns
 2010-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}{Signal Rank by Brand:3}
 ```
 
+###Example 3: Competition Ranking By Context Type
+
+Take the following data set:
+
+```language-katsu
+2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
+2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}
+2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
+2010-01-01[Brand:HSBC][Subgroup:Male][Metric:Awareness]{Signal:5}
+2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}
+2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}
+2010-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}
+2010-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}
+```
+The following Tractor script:
+```language-tractor
+~> rank competition [Brand] ~>
+```
+returns
+```language-katsu
+2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:1}
+2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
+2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
+2010-01-01[Brand:HSBC][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:4}
+2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
+2010-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
+2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}{Signal Rank by Brand:3}
+2010-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}{Signal Rank by Brand:4}
+```
+
 ###Things To Note With Rank
 
 You can only rank a dataset by **one** context type only. 
