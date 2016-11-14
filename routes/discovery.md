@@ -152,7 +152,7 @@ Filters the results to times for data that has the context 'Brand:Martini'.
 “Give the bounds of date times available values of test”
 
 ```language-http
-(base)/discover/time?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=bounds&signal={test}
+(base)/discover/time.json?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=bounds&signal={test}
 ```
 
 **Returns**
