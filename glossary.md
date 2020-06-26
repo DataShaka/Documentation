@@ -84,7 +84,7 @@ The process of managing the movement, lineage, storage and quality control of da
 
 ###Tractor
 
-The DataShaka data orchestration language. Read [this](../../Tractor/Documentation/html/tractor.html) for more details
+The DataShaka data orchestration language.
 
 
 ##<a id="implementation">Implementation</a>
