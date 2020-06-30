@@ -6,6 +6,7 @@
 
     - [Type of API](./principles.md#type-api)
     - [Katsu](./principles.md#katsu)
+    - [Calendars](./principles.md#calendars)
     - [Basics](./principles.md#basics)
     - [HTTPS](./principles.md#https)
     - [Key Routes](./principles.md#routes)
