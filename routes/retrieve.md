@@ -1,11 +1,11 @@
-#Retrieve route
+# Retrieve route
 
 
 - The Retrieve route allows you to query and/or manipulate stored data from a given groupspace
 - An authentication token is needed to make any query.
 
 
-##Formatters
+## Formatters
 
 ```
 .json
@@ -17,7 +17,7 @@
 .csv
 ```
 
-##Authentication Parameters
+## Authentication Parameters
 
 ```
 token=<your token>
@@ -26,21 +26,21 @@ token=<your token>
 groupspace=<your groupspace>
 ```
 
-##Base
+## Base
 
 ```language-http
 https://api.datashaka.com/v1.0/
 ```
 
-##HTTP Methods
+## HTTP Methods
 
-###GET
+### GET
 - Provide your groupspace (as required) and token (always required) in the URL
 - Provide parameters in the name=value&name2=value2 form in the url
 - Tractor is not available in GET requiest
 
   
-###POST
+### POST
 - Provide your groupspace (as required) and token (always required) in the URL
 - Provide your parameters as the post document in JSON with the ```context-type``` ```application/json```
 - Tractor and Tractors can also be included in the POST document
