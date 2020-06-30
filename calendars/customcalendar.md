@@ -1,5 +1,5 @@
 # <a id="custom-cal">Custom Calendars</a>
-These are calendars that you can specify yourself! They are made up of intervals and definitions. Intervals are alternative definitions of chunks of time (month, quarter, campaign, etc.) and definitions are fundamental alterations to the default calendar (for example, on what day a week starts. Sunday, Monday, etc.). Custom calendar can be provided in the query, but if it is not provided [Default Calendar](calendars/defaultcalendar.md) comes in to play automatically.
+These are calendars that you can specify yourself! They are made up of intervals and definitions. Intervals are alternative definitions of chunks of time (month, quarter, campaign, etc.) and definitions are fundamental alterations to the default calendar (for example, on what day a week starts. Sunday, Monday, etc.). Custom calendar *can* be provided in the query, but if it is not provided [Default Calendar](calendars/defaultcalendar.md) comes in to play automatically.
 
 ## <a id="customjson-cal">JSON</a>
 
