@@ -1,4 +1,4 @@
-#Discovery routes
+# Discovery routes
 
 - Discovery routes allow you to discover what is available for query in your Katsu data. You could also describe them as **meta data** routes. 
 - Discovery routes work off the stored data and so relate to points of data you have available.
@@ -6,33 +6,33 @@
 - Where applicable a 'mode' parameter can be specified to give a variation on what kind of data is returned.
 
 
-##Formatters
+## Formatters
 
 ```
 .json
 ```
 
-##Authentication Parameters
+## Authentication Parameters
 
 ```
 token=<your token>
 ```
 
-##Base
+## Base
 
 ```language-http
 https://api.datashaka.com/v1/
 ```
 
-##HTTP Methods
+## HTTP Methods
 
-###GET
+### GET
 - Provide your groupspace (as required) and token (always required) in the URL
 - If any route uses a 'mode' parameter this should also be given in the URL for GET requests
 - Provide parameters in the name=value&name2=value2 form in the url
 - Tractor is not available in GET request
 
-###POST
+### POST
 - Provide your groupspace (as required) and token (always required) in the URL
 - If any route uses a 'mode' parameter this should also be given in the URL for POST requests
 - Provide your parameters as the post document in JSON with the ```context-type``` ```application/json```
@@ -49,7 +49,7 @@ https://api.datashaka.com/v1/
 }
 ```
 
-##Groupspace
+## Groupspace
 
 **Route**
 
@@ -80,7 +80,7 @@ https://api.datashaka.com/v1/discover/groupspace.json?token=<your token>
     }
 ```
 
-##Time
+## Time
 
 **Route** 
 
@@ -161,7 +161,7 @@ Filters the results to times for data that has the context 'Brand:Martini'.
 }
 ```
 
-##Context
+## Context
 
 **Route** 
 
@@ -264,7 +264,7 @@ Filters the results to times for data that has the context 'Brand:X'.
 }
 ```
 
-##Signal
+## Signal
 
 **Route** 
 
