@@ -1,4 +1,4 @@
-# Core API Roadmap
+# DataShaka Platform
 
 ## Table of contents
 
