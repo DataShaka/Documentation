@@ -32,7 +32,7 @@ syntax when paired with a Value and `{S1}...{Sn}` syntax when not paired with a 
 {Sales:100}{Revenue:20.50}
 ```
 
-###Value
+### Value
 A numeric value. Values in Katsu is written with the syntax
 ```language-katsu
 {S1:V1}...{Sn:Vn}
