@@ -1,6 +1,6 @@
-#Routes
+# Routes
 
-###Available routes
+### Available routes
 
 | Route | Description | Implementation |
 |--------|--------|--------|
@@ -8,9 +8,9 @@
 |  **Retrieval**     | Goal orientated queries for Katsu data        | [Documentation](routes/retrieve.md) |
 
 
-###Naming conventions
+### Naming conventions
 
-####Parameters
+#### Parameters
 Parameters will be presented in a table in the following way :
 
 | Name | Type |Connected |Description |Availability |
@@ -18,17 +18,17 @@ Parameters will be presented in a table in the following way :
 | The parameter Name       |The Expected Data Type        |Returns limited to include elements only connected to Katsu points. This will show ‘true’ or ‘false’ This is not applicable for parameters that limit a return. ‘N/A’ will be used in this case |A more detailed description of the parameter |Notes on the availability of a parameter. This may be ‘deprecated’ meaning it is no longer available in any version or a list of versions that support this parameter. |
 
 
-####Common terms
+#### Common terms
 
 For a rest call all values will be passed as a string. Each type will specify how that string should be formed. Commonly used terms are explained below :
 
 ##### ISO8601
 A string representation of a DateTime conforming to the ISO8601 specification.
 
-#####Boolean
+##### Boolean
 `True` or `False`
 
-#####Context list
+##### Context list
 ```language-katsu
 [ContextType:Context][Ct2:C2]..[Ctn:Cn]
 ```
@@ -38,7 +38,7 @@ A string representation of a DateTime conforming to the ISO8601 specification.
 - Including duplicate Ct references will result in an OR match. For example [City:London][City:York] will return London OR York matches.
 
 
-#####Signal list
+##### Signal list
 ```language-katsu
 {Signal A}{Signal B}{Signal Z}
 ```
