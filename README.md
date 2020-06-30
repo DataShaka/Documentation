@@ -19,7 +19,6 @@
 
     - [Katsu](glossary.md#katsu)
     - [Queries](glossary.md#queries)
-    - [Tractor](glossary.md#tractor)
     - [Calendars](glossary.md#calendars)
     - [Orchestration](glossary.md#orchestration)
     - [API Implementation](glossary.md#implementation)
