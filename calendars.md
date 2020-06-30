@@ -1,7 +1,5 @@
 # Calendars
 
-## <a id="principles-cal">Principles</a>
-
 ### <a id="why-cal">Why do we need calendars?</a>
 [DataShaka](http://datashaka.com) technology is all based around the ingest, manipulation and storage of [time-series](http://en.wikipedia.org/wiki/Time_series) data. Our Katsu data fabric is based on a time-series master ontology made up of elements of [Time, Context, Signal and Value (TCSV for short)](http://www.datashaka.com/blog/techie/2013/11/what-is-tcsv).
 
