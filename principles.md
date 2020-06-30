@@ -25,6 +25,14 @@ A more light hearted explanation can be found [on XKCD.com](http://xkcd.com/1179
 
 We chose ISO8601 (as opposed to [Excel date time numbers](http://excelribbon.tips.net/T011337_How_Excel_Stores_Dates_and_Times.html) or [Unix time](http://en.wikipedia.org/wiki/Unix_time)) for the simple reasons that it is a standard, it covers the range of time from `0000-00-00T00:00:00.000` to `9999-12-31T23:59:59.999` should those ever be needed, it allows for simple week and quarter specification (`yyyy-Qn` and `yyyy-Wn`) and because, most importantly, it is internationally human readable!
 
+##### <a id="where-cal">Where Calendars are used</a>
+
+##### <a id="coreapi-cal">Core API</a>
+In the Core API calendars are used to 'expand' the dates given in [ISO8601](#iso8601) to fully granular 'time bounds' used to find the data required. Calendars for this purpose can only be specified in `POST` requests as part of the request body JSON document.
+
+##### <a id="tractor-cal">Tractor</a>
+Tractor uses calendars to help it deal with time based operations. For example `group by "month"` uses a calendar to decide what `month` groupings look like. When Tractor is used in the CoreAPI the same calendar is used as is used for the query itself.
+
 
 ### <a id="routes">Key Routes</a>
 The key routes discussed in the document fall under two broad categories :
