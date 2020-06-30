@@ -4,11 +4,6 @@
 - The Retrieve route allows you to query and/or manipulate stored data from a given groupspace
 - An authentication token is needed to make any query.
 
-##Version
-
-```
-V1.0
-```
 
 ##Formatters
 
@@ -20,9 +15,6 @@ V1.0
 ```
 ```
 .csv
-```
-```
-.html
 ```
 
 ##Authentication Parameters
@@ -37,7 +29,7 @@ groupspace=<your groupspace>
 ##Base
 
 ```language-http
-https://api.datashaka.com/v1/
+https://api.datashaka.com/v1.0/
 ```
 
 ##HTTP Methods
