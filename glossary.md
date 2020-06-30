@@ -80,9 +80,12 @@ Within DataShaka technology there are currently two kinds of calendars you can u
 #### <a id="default-cal">The Default Calendar</a>
 This is basically the [ISO8601](#iso8601) [Gregorian](http://en.wikipedia.org/wiki/Gregorian_calendar) calendar. I say 'basically' because we have had to make some decisions up front on the way this calendar is implemented because computers and 'planetary motion' works in different ways.
 
+Check out the [Default Calendar](calendars/defaultcalendar.md) page to learn more.
+
 #### <a id="custom-cal">Custom Calendars</a>
 These are calendars that you can specify yourself! They are made up of intervals and definitions. Intervals are alternative definitions of chunks of time (month, quarter, campaign, etc.) and definitions are fundamental alterations to the default calendar (for example, on what day a week starts. Sunday, Monday, etc.)
 
+Check out the [Custom Calendar](calendars/customcalendar.md) page to learn more.
 
 ## <a id="orchestration">Orchestration</a>
 
