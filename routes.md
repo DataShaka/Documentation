@@ -6,6 +6,7 @@
 |--------|--------|--------|
 |  **Discovery**     | Discovery routes allow you to explore Katsu data        | [Documentation](routes/discovery.md) |
 |  **Retrieval**     | Goal orientated queries for Katsu data        | [Documentation](routes/retrieve.md) |
+|  **Upsert**     | Upsert routes allow you to insert new data and/or update existing data | [Documentation](routes/upsert.md) |
 
 
 ### Naming conventions
