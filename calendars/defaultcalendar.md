@@ -1,4 +1,4 @@
-### <a id="default-cal">The Default Calendar</a>
+# <a id="default-cal">The Default Calendar</a>
 This is basically the [ISO8601](#iso8601) [Gregorian](http://en.wikipedia.org/wiki/Gregorian_calendar) calendar. I say 'basically' because we have had to make some decisions up front on the way this calendar is implemented because computers and 'planetary motion' works in different ways.
 
 **Standard Expansion to full granularity**
