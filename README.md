@@ -1,6 +1,6 @@
-#Core API Roadmap
+# Core API Roadmap
 
-##Table of contents
+## Table of contents
 
 - [Principles](principles.md)
 
