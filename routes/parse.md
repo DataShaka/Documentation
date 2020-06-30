@@ -1,16 +1,11 @@
-#Parse route
+# Parse route
 
 
 - The Parse route allows you convert data from a known format into Katsu.
 - An authentication token is needed to Parse data
 
-##Version
 
-```
-V1.0
-```
-
-##Formatters
+## Formatters
 
 ```
 .json
@@ -25,55 +20,55 @@ V1.0
 - The formatters apply to the version of Katsu output by the parser. We recomend using .json or .tcsv if you wish to upsert the data after parsing.
 
 
-##Authentication Parameters
+## Authentication Parameters
 
 ```
 token=<your token>
 ```
 
-##Base
+## Base
 
 ```language-http
-https://api.datashaka.com/v1/
+https://api.datashaka.com/v1.0/
 ```
 
-##HTTP Methods
+## HTTP Methods
 
-###POST
+### POST
 - Provide your token (always required) in the URL
 - Provide your data as the post document with the ```content-type``` appropriate to the content e.g. ```application/json``` or ```application/xml```
 
 ## Actions
 
-###Quandl
+### Quandl
 
 ```language-http
 /parse/quandl.tcsv
 ```
 
-####Input Format expected
+#### Input Format expected
 
 Json. 
 Content-Type: ```application/json```
 
-####Parameters
+#### Parameters
 
 Url: ```token=<your token>```
 
 Post Body: `quandl document in json`
 
-###Sysomos
+### Sysomos
 
 ```language-http
 /parse/sysomos.tcsv
 ```
 
-####Input Format expected
+#### Input Format expected
 
 Xml. 
 Content-Type: ```application/json```
 
-####Parameters
+#### Parameters
 
 Url: ```token=<your token>```
 
@@ -83,7 +78,7 @@ optional ```dateoverride=<yyyy-MM-ddTHH:mm:ss.mmm>``` overrides any default date
 
 Post Body: `sysomos document in xml`
 
-####Available names
+#### Available names
 
 - `map analytics` (url encoded `map+analytics`). This parses a Sysomos map analytics query response. A date override is often needed with this parser.
 
