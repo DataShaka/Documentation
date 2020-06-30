@@ -87,7 +87,7 @@ The DataShaka data orchestration language.
 
 ### APIVx.x
 
-Specification of a version of the API. For Example APIV1.0.
+Specification of a version of the API. For Example V1.0.
 
 ### Planned
 
