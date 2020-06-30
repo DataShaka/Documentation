@@ -30,10 +30,10 @@ All routes require HTTPS encryption.
 This API will be versioned explicitly within the URL. The versions will be sunset when their functionality is either entirely replaced by a new version or the functionality is deprecated. In the development of this API there will sometimes be *Alpha* and *Beta* versions available. We ask that these are not used in production as their functionality will not be finalized.
 In any route the version is directly after the domain and **always preceded by a v**.
 
-For example, the current API at time of writing is `https://api.datashaka.com/v0.2`.
+For example, the current API is `https://api.datashaka.com/v1.0`.
 
 ### <a id="authentication">Authentication</a>
-Through ***under consideration*** mechanism an API Token will be provided. This Token is the equivalent of a user on the DataShaka platform. The token has privileges to specified sets (Groupspaces) of data for a single account.
+Authentication is done through an API Token. This Token is the equivalent of a user on the DataShaka platform. The token has privileges to specified sets (Groupspaces) of data for a single account.
 Once this token has been obtained it must be included in every call to the API regardless of route. Regardless of REST method a parameter called **token** must exist with the value of the token provided. For example, in a GET call token=xyz123
 **The security of this token is the responsibility of the bearer.**
 
