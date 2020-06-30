@@ -2,7 +2,7 @@
 
 - Discovery routes allow you to discover what is available for query in your Katsu data. You could also describe them as **meta data** routes. 
 - Discovery routes work off the stored data and so relate to points of data you have available.
-- Discovery routes take the same base parameters as retrieve routes and so can be filtered in the same way. (planned for future release)
+- Discovery routes take the same base parameters as retrieve routes and so can be filtered in the same way. (**Planned**)
 - Where applicable a 'mode' parameter can be specified to give a variation on what kind of data is returned.
 
 
