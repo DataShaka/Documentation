@@ -93,7 +93,7 @@ The process of managing the movement, lineage, storage and quality control of da
 
 ### Tractor
 
-The DataShaka data orchestration language.
+Tractor is a modern **data orchestration** scripting language designed to make **data easier**.
 
 
 ## <a id="implementation">Implementation</a>
