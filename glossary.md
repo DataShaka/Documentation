@@ -71,8 +71,18 @@ Retrieve queries are used to get a portion of the overall unified set. For examp
 
 Check out the [Retrieval API Route](routes/retrieve.md) page to learn more.
 
-### Enrich
-Alter data in some way
+
+## <a id="calendars">Calendars</a>
+
+### <a id="type-cal">Types of Calendars</a>
+Within DataShaka technology there are currently two kinds of calendars you can use. The default calendar or a custom calendar.
+
+#### <a id="default-cal">The Default Calendar</a>
+This is basically the [ISO8601](#iso8601) [Gregorian](http://en.wikipedia.org/wiki/Gregorian_calendar) calendar. I say 'basically' because we have had to make some decisions up front on the way this calendar is implemented because computers and 'planetary motion' works in different ways.
+
+#### <a id="custom-cal">Custom Calendars</a>
+These are calendars that you can specify yourself! They are made up of intervals and definitions. Intervals are alternative definitions of chunks of time (month, quarter, campaign, etc.) and definitions are fundamental alterations to the default calendar (for example, on what day a week starts. Sunday, Monday, etc.)
+
 
 ## <a id="orchestration">Orchestration</a>
 
