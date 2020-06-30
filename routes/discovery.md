@@ -2,14 +2,9 @@
 
 - Discovery routes allow you to discover what is available for query in your Katsu data. You could also describe them as **meta data** routes. 
 - Discovery routes work off the stored data and so relate to points of data you have available.
-- Discovery routes take the same base parameters as retrieve routes and so can be filtered in the same way.
+- Discovery routes take the same base parameters as retrieve routes and so can be filtered in the same way. (planned for future release)
 - Where applicable a 'mode' parameter can be specified to give a variation on what kind of data is returned.
 
-##Version
-
-```
-V1.0
-```
 
 ##Formatters
 
@@ -207,8 +202,6 @@ Possible modes:
 - ```Context```: (default) all Context pairs
 - ```Type```: Only the 'Keys' (Context Type) of the Context pairs
 - ```Name```: Only the 'Values' (Context Name) of the Context pairs
-- ```Sets```: The sets of Context pairs that exist against points
-- ```Shape```: The Context type shapes of points
 
 _signal_ (optional)
 
@@ -237,36 +230,36 @@ Filters the results to times for data that has the context 'Brand:X'.
 ```language-json
 {"names": [""]}
 ```
-```language-json
-{"sets": [{"type":"name"}]}
-```
-```language-json
-{"shapes": [""]}
-```
 
 **Example**
 
 “Give the unique sets of context for all time”
 
 ```language-http
-(base)/discover/context.json?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=Sets
+(base)/discover/context.json?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=Context
 ```
 
 **Returns**
 
 ```language-json
 {
-  "sets": [
+  "context": [
     {
-      "Brand": "X",
-      "Source": "Internal",
-      "Market": "UK"
+        "Key": "Brand",
+        "Value": "Y"
     },
     {
-      "Brand": "Y",
-      "Source": "Internal",
-      "Market": "UK"
+        "Key": "Brand",
+        "Value": "X"
     },
+    {
+        "Key": "Source",
+        "Value": "Internal"
+    },
+    {
+        "Key": "Market",
+        "Value": "UK"
+    }
   ]
 }
 ```
@@ -328,7 +321,7 @@ Filters the results to times for data that has the context 'Brand:X'.
 “Give the unique signals for all time”
 
 ```language-http
-(base)/discover/signal.json?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=Sets
+(base)/discover/signal.json?token=<your token>&groupspace=Demo&time_from=1901&time_to=2099
 ```
 
 **Returns**
@@ -338,104 +331,5 @@ Filters the results to times for data that has the context 'Brand:X'.
   "signals": [
     "test"
   ]
-}
-```
-
-##Shape
-
-A 'shape' is the combination of context types and signal that make up part of the signature of a point (Without time or value).
-A 'set' is the combination of the context pairs and signal that make up part of the signature of a point. (Without time or value)
-
-**Route** 
-
-```language-http
-(base)/discover/shape
-```
-
-**Parameters**
-
-_groupspace_ (required)
-
-```
-groupspace=Demo
-```
-
-_time from_ (optional)
-
-```
-time_from=ISO8601
-```
-use ```time_from=1901``` for 'earliest possible date'
-
-_time to_ (optional)
-
-```
-time_to=ISO8601
-```
-use ```time_to=2099``` for 'latest possible date'
-
-_mode_ (optional)
-
-```
-mode=shape
-```
-
-Possible modes:
-- ```None```: equivalent to not providing mode Causes the same result as (default).
-- ```Sets```: The sets of Context pairs that exist against points with signals
-- ```Shape```: (default) The Context type shapes of points with signals
-
-_signal_ (optional)
-
-```
-signal={Sales}
-```
-
-Filters the results to times for data that has the signal 'Sales'.
-
-_context_ (optional)
-
-```
-context=[Brand:X]
-```
-
-Filters the results to times for data that has the context 'Brand:X'.
-
-**Retun Object(s)**
-
-```language-json
-{"shape": [{"context_types":[],"signal":""}]}
-```
-```language-json
-{"sets": [{"context":[{"type":"name"}],"signal":""}]}
-```
-
-**Example**
-
-“Give the unique shapes of context and signals for all time”
-
-```language-http
-(base)/discover/context.json?token.json=<your token>&groupspace=Demo&time_from=1901&time_to=2099&mode=shape
-```
-
-**Returns**
-
-```language-json
-{
-  "shapes": [
-    {
-      "context_types": [
-        "Brand",
-        "Country"
-      ],
-      "signal": "Sales"
-    },
-    {
-      "context_types": [
-        "Brand",
-        "Contry"
-      ],
-      "signal": "Revenue"
-    },
 }
 ```
