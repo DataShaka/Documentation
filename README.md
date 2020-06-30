@@ -19,6 +19,7 @@
 
     - [Katsu](glossary.md#katsu)
     - [Queries](glossary.md#queries)
+    - [Calendars](glossary.md#calendars)
     - [Orchestration](glossary.md#orchestration)
     - [API Implementation](glossary.md#implementation)
 
