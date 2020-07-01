@@ -6,7 +6,7 @@
 
     - [Type of API](./principles.md#type-api)
     - [Katsu](./principles.md#katsu)
-    - [Orchestration](glossary.md#orchestration)
+    - [Orchestration](./principles.md#orchestration)
     - [Calendars](./principles.md#calendars)
     - [Basics](./principles.md#basics)
     - [HTTPS](./principles.md#https)
