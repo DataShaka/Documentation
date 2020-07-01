@@ -21,6 +21,7 @@
     - [Queries](glossary.md#queries)
     - [Calendars](glossary.md#calendars)
     - [Orchestration](glossary.md#orchestration)
+    - [Tractor](glossary.md#tractor)
     - [API Implementation](glossary.md#implementation)
 
 - [Routes](routes.md)
