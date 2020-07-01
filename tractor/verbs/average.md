@@ -4,7 +4,7 @@
 
 The **average** verb averages up values of a [Data package](../datapackages.md) points. The result is also a [Data package](../datapackages.md).
 
-The time point associated with the resulting package is the first point of the aggregated data. By default, non-existent values are ignored. By default, the method used is the [arithmetic mean](http://en.wikipedia.org/wiki/Arithmetic_mean)
+The time point associated with the resulting package is the first point of the aggregated data. By default, non-existent values are ignored. The method used is the [arithmetic mean](http://en.wikipedia.org/wiki/Arithmetic_mean)
 
 
 ## Syntax
