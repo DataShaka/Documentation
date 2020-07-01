@@ -78,7 +78,7 @@ Check out the [Retrieval API Route](routes/retrieve.md) page to learn more.
 Within DataShaka technology there are currently two kinds of calendars you can use. The default calendar or a custom calendar.
 
 #### <a id="default-cal">The Default Calendar</a>
-This is basically the [ISO8601](#iso8601) [Gregorian](http://en.wikipedia.org/wiki/Gregorian_calendar) calendar. I say 'basically' because we have had to make some decisions up front on the way this calendar is implemented because computers and 'planetary motion' works in different ways.
+This is basically the [ISO8601](./principles.md#iso8601) [Gregorian](http://en.wikipedia.org/wiki/Gregorian_calendar) calendar. I say 'basically' because we have had to make some decisions up front on the way this calendar is implemented because computers and 'planetary motion' works in different ways.
 
 Check out the [Default Calendar](calendars/defaultcalendar.md) page to learn more.
 
