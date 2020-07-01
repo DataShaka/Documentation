@@ -1,6 +1,4 @@
-# Understanding Tractor
-
-## The Tractor Mission
+# The Tractor Mission
 
 Tractor embodies a new way of looking at data because it is designed to give a user the ability to 'do work' on data very easily. When doing work on data in the [Katsu](../glossary.md#katsu) format specifically, it offers control over the all the flexibility that [Katsu](../glossary.md#katsu) offers.
 
@@ -12,7 +10,7 @@ The work that a user would want to do on a dataset can be grouped into three are
 
 Currently, only the tooling around the manipulation of data is available, so acquiring data and transforming it into [Katsu](../glossary.md#katsu) cannot be done using Tractor. Delivering data is also not possible at this point.
 
-## How Tractor Works
+# How Tractor Works
 
 Because Tractor is 'data first' it has a different mental model from other programming languages. The fundamental assumption is that there is 'data to work on'. Whether that data is harvested from an API or is the result from a query from an internal store.
 
