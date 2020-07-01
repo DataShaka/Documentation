@@ -17,6 +17,6 @@ Because Tractor is 'data first' it has a different mental model from other progr
 The Tractor DSL is made up of: 
 - [Tractor Beams](tractorbeams.md)
 - [Data Packages](datapackages.md)
-- [Verbs](verbs.md)
+- [Verbs](verbs/readme.md)
 - [Chopsticks](chopsticks.md)
 - [The Hitch](hitch.md)
