@@ -13,11 +13,18 @@ Verbs that are currently available for manipulating data in Tractor are:
 
 - Average
 - Calculate
+- Count
 - Crop
+- Crush
+- Dedupe
+- Difference 
 - Filter
 - Group by
+- Insert
+- Limit 
 - Pad
 - Rank
+- Replace
 - Roll by
 - Sort by
 - Sum
