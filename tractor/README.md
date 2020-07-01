@@ -2,7 +2,7 @@
 
 ## The Tractor Mission
 
-Tractor embodies a new way of looking at data because it is designed to give a user the ability to 'do work' on data very easily. When doing work on data in the Katsu format specifically, it offers control over the all the flexibility that Katsu offers.
+Tractor embodies a new way of looking at data because it is designed to give a user the ability to 'do work' on data very easily. When doing work on data in the [Katsu](../glossary.md#katsu) format specifically, it offers control over the all the flexibility that [Katsu](../glossary.md#katsu) offers.
 
 The work that a user would want to do on a dataset can be grouped into three areas: manipulation, acquisition, delivery or MAD.
 
@@ -10,7 +10,7 @@ The work that a user would want to do on a dataset can be grouped into three are
 - A = a user putting data into the DataShaka store
 - D = a user exporting manipulated data into charts, spreadsheets, reports or third party visualisation tools
 
-Currently, only the tooling around the manipulation of data is available, so acquiring data and transforming it into Katsu cannot be done using Tractor. Delivering data is also not possible at this point.
+Currently, only the tooling around the manipulation of data is available, so acquiring data and transforming it into [Katsu](../glossary.md#katsu) cannot be done using Tractor. Delivering data is also not possible at this point.
 
 ## How Tractor Works
 
