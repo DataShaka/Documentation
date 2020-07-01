@@ -220,3 +220,61 @@ Examples Using Signal/Value Fragments
 
     `2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}`
     
+    
+    
+# Being Accurate With Your Values
+
+In addition to the syntax above, Chopsticks can be used to specify a range of values using operators:
+
+- `>` for e.g. {Gross:>5} keeps all points for which Gross is strickly greater than 5
+- `>=` for e.g. {Gross:>=5} keeps all points for which Gross is greater than 5
+- `<` for e.g. {Gross:>5} keeps all points for which Gross is strickly less than 5
+- `<=` for e.g. {Gross:>5} keeps all points for which Gross is less than 5
+- `<>` for e.g. {Gross:>5} keeps all points for which Gross is different than 5
+- `-` for e.g. {Gross:5-10} keeps all points for which Gross is between 5 and 10 ( non strictly)
+
+For instance, let's take the following data set:
+
+```
+2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
+2014-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
+2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+2014-01-01[Brand:Z][Country:France]{Net:25}{Gross:28}
+```
+
+Below script selects all points in January 2015 and group them by day
+
+`select 2012{Net:<20}`
+
+and returns
+
+`2012-01-01[Brand:X][Country:UK]{Net:12}`
+
+
+
+# Rules For Chopsticks
+
+- Tractor doesn't support ranges definition such as 2013 to 2015
+- Text comparisons are case sensitive, Brazil is not the same as brazil
+- When a context type is mentioned more than once in a Chopstick, Tractor applies an implicit `or` :
+
+  Take the following dataset:
+
+  ```
+  2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
+  2014-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
+  2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+  2014-01-01[Brand:Z][Country:Germany]{Net:25}{Gross:28}
+  ```
+
+  Below script selects all points with context type Country and Name UK OR France
+
+  `select [Country:UK][Country:France]`
+
+  and returns
+
+  ```
+  2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
+  2014-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
+  2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+  ```
