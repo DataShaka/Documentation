@@ -11,23 +11,23 @@ filter {High}{Low} ~> group by year ~> calculate "{High}/{Low}"
 
 Verbs that are currently available for manipulating data in Tractor are:
 
-- Average
-- Calculate
-- Count
-- Crop
-- Crush
-- Dedupe
-- Difference 
-- Filter
-- Group by
-- Insert
-- Limit 
-- Pad
-- Rank
-- Replace
-- Roll by
-- Sort by
-- Sum
+- [Average](average.md)
+- [Calculate](calculate.md)
+- [Count](count.md)
+- [Crop](crop.md)
+- [Crush](crush.md)
+- [Dedupe](dedupe.md)
+- [Difference](difference.md)
+- [Filter](filter.md)
+- [Group by](groupby.md)
+- [Insert](insert.md)
+- [Limit](limit.md)
+- [Pad](pad.md)
+- [Rank](rank.md)
+- [Replace](replace.md)
+- [Roll by](rollby.md)
+- [Sort by](sortby.md)
+- [Sum](sum.md)
 
 
 # <a id="keywords">Keywords</a>
