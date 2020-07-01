@@ -9,7 +9,7 @@ For example - filter, then group by, then calculate is written in [Tractor](read
 
 There are two instances where the Hitch `~>` is *not* used.
 
-- In between a [Verb](verbs/readme.md) and a [Keyword](verbs/keywords.md)
+- In between a [Verb](verbs/readme.md) and a [Keyword](verbs/readme.md#keywords)
 - At the end of a [Tractor Beam](tractorbeams.md)
 
 For example:
