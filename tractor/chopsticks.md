@@ -11,7 +11,7 @@ Here are some examples of Chopsticks:
 One time fragment, two context fragments and one signal/value fragment
 
 ```
-2013[Country:Brazil][Country:France]{Won:6}
+2018[Country:Brazil][Country:France]{Played:6}
 ```
 
 Zero time fragments, zero context fragments and three signal/value fragments
@@ -23,7 +23,7 @@ Zero time fragments, zero context fragments and three signal/value fragments
 One time fragment, two context fragments and zero signal/value fragments
 
 ```
-2014-01-01[Brand:Evian][Region:Europe][Country:UK]
+2020-01-01[Brand:Evian][Region:Europe][Country:UK]
 ```
 
 # Fragments
@@ -44,23 +44,23 @@ Chopstick supports [ISO8601](../principles.md#iso8601) notation to specify date 
 |2020-01	| 2020-01-01T00:00:00.000	| 2020-01-31T23:59:59.999|
 |2020-01-01T12:34:52	| 2020-01-01T12:34:52.000	| 2020-01-01T12:34:52.999|
 
-So if you select 2020 as your date them your interval will start at midnight of the 1st of January and end on mignight on the 31st of December.
+So if you select 2020 as your date them your interval will start at midnight of the 1st of January and end on midnight on the 31st of December.
 
 For example on the dataset:
 
 ```
-2020[Sport:Football][Country:Brazil][Even:World Cup]{Won:1}
-2019[Sport:Football][Country:Brazil][Even:World Cup]{Won:2}
-2018[Sport:Football][Country:Brazil][Even:World Cup]{Won:6}
+2018[Sport:Football][Country:Brazil][Event:World Cup]{Played:1}
+2014[Sport:Football][Country:Brazil][Event:World Cup]{Played:2}
+2010[Sport:Football][Country:Brazil][Event:World Cup]{Played:6}
 ```
 
-Below script selects all points in 2020 only:
+Below script selects all points in 2018 only:
 
-`select 2020`
+`2018`
 
 and returns
 
-`2020[Sport:Football][Country:Brazil][Even:World Cup]{Won:1}`
+`2018[Sport:Football][Country:Brazil][Event:World Cup]{Played:1}`
 
 ## <a id="contextfragment">Context Fragment</a>
 
@@ -115,64 +115,64 @@ To look for context types starting by 'C' associated with context name starting 
     Take the following data set:
 
     ```
-    1958[Sport:Football][Country:Brazil][Event:World Cup]{Won:1}
-    1962[Sport:Football][Country:Brazil][Event:World Cup]{Won:2}
-    1998[Sport:Football][Country:France][Event:World Cup]{Won:1}
-    2002[Sport:Football][Country:Brazil][Event:World Cup]{Won:6}
+    1958[Sport:Football][Country:Brazil][Event:World Cup]{Played:1}
+    1962[Sport:Football][Country:Brazil][Event:World Cup]{Played:2}
+    1998[Sport:Football][Country:France][Event:World Cup]{Played:1}
+    2002[Sport:Football][Country:Brazil][Event:World Cup]{Played:6}
     ```
 
-    This script selects all points in January 2015 and groups them by day:
+    This script selects all points where context type is Country and the context name matching regex ^F.* :
 
-    `select [Country:regex('^F.*')]`
+    `[Country:regex('^F.*')]`
 
     and returns
 
-    `1998[Sport:Football][Country:France][Event:World Cup]{Won:1}`
+    `1998[Sport:Football][Country:France][Event:World Cup]{Played:1}`
 
-1. Example 2
+2. Example 2
 
     Take the following data set:
 
     ```
-    2014-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
-    2014-01-01[Brand:X][Country:France]{Net:25}{Tax:3}{Gross:28}
-    2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
-    2014-01-01[Brand:Z][Country:France]{Net:25}{Tax:3}{Gross:28}
+    2020-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
+    2020-01-01[Brand:X][Country:France]{Net:25}{Tax:3}{Gross:28}
+    2020-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+    2020-01-01[Brand:Z][Country:France]{Net:25}{Tax:3}{Gross:28}
     ```
 
-    This script selects all points in January 2015 and group them by day
+    This script selects all points where context type is Brand and context name matching regex ^Z$ :
 
-    `select [Brand:regex('^Z$')]`
+    `[Brand:regex('^Z$')]`
 
     and returns
 
-    `2014-01-01[Brand:Z][Country:France]{Net:25}{Tax:3}{Gross:28}`
+    `2020-01-01[Brand:Z][Country:France]{Net:25}{Tax:3}{Gross:28}`
 
-1. Example 3
+3. Example 3
 
     Take the following data set:
 
     ```
-    2013-01-01[Brand:X][Countery:UK]{Net:12}{Tax:1}{Gross:13}
-    2013-01-01[Brand:X][County:France]{Net:25}{Tax:3}{Gross:28}
-    2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
-    2014-01-01[Brand:Z][County:France]{Net:25}{Tax:3}{Gross:28}
+    2019-01-01[Brand:X][Countery:UK]{Net:12}{Tax:1}{Gross:13}
+    2019-01-01[Brand:X][County:France]{Net:25}{Tax:3}{Gross:28}
+    2020-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+    2020-01-01[Brand:Z][County:France]{Net:25}{Tax:3}{Gross:28}
     ```
 
-    This script selects all points in January 2015 and group them by day
+    This script selects all points in 1-Jan-2020 and context type matching regex ^Cou.* :
 
-    `select 2014-01-01[regex('^Cou.*'):]`
+    `2020-01-01[regex('^Cou.*'):]`
 
     and returns
 
     ```
-    2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
-    2014-01-01[Brand:Z][County:France]{Net:25}{Tax:3}{Gross:28}
+    2020-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+    2020-01-01[Brand:Z][County:France]{Net:25}{Tax:3}{Gross:28}
     ```
 
 ## <a id="signalvaluefragment">Signal/Value Fragment</a>
 
-Use can also use Chopstick's built-in functions to perform searches on Signals and Values. Here are the different ways in which a user can look for data:
+You can also use Chopstick's built-in functions to perform searches on Signals and Values. Here are the different ways in which a user can look for data:
 
 To look for all points with signal 'Net' associated with a value of 25 you use:
 
@@ -206,19 +206,19 @@ Examples Using Signal/Value Fragments
     Take the following data set:
 
     ```
-    2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
-    2014-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
-    2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
-    2014-01-01[Brand:Z][Country:France]{Net:25}{Gross:28}
+    2018-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
+    2020-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
+    2020-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+    2020-01-01[Brand:Z][Country:France]{Net:25}{Gross:28}
     ```
     
-    This script selects all points in January 2015 and group them by day
+    This script selects all points in 2018 and signal name as Tax :
 
-    `select 2012{Tax:}`
+    `2018{Tax:}`
     
     and returns:
 
-    `2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}`
+    `2018-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}`
     
     
     
@@ -236,45 +236,45 @@ In addition to the syntax above, Chopsticks can be used to specify a range of va
 For instance, let's take the following data set:
 
 ```
-2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
-2014-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
-2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
-2014-01-01[Brand:Z][Country:France]{Net:25}{Gross:28}
+2018-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
+2020-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
+2020-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+2020-01-01[Brand:Z][Country:France]{Net:25}{Gross:28}
 ```
 
-Below script selects all points in January 2015 and group them by day
+Below script selects all points in 2018 and with signal name as Net with value less than 20
 
-`select 2012{Net:<20}`
+`2018{Net:<20}`
 
 and returns
 
-`2012-01-01[Brand:X][Country:UK]{Net:12}`
+`2018-01-01[Brand:X][Country:UK]{Net:12}`
 
 
 
 # Rules For Chopsticks
 
-- Tractor doesn't support ranges definition such as 2013 to 2015
+- Tractor doesn't support ranges definition such as 2018 to 2020
 - Text comparisons are case sensitive, Brazil is not the same as brazil
 - When a context type is mentioned more than once in a Chopstick, Tractor applies an implicit `or` :
 
   Take the following dataset:
 
   ```
-  2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
-  2014-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
-  2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
-  2014-01-01[Brand:Z][Country:Germany]{Net:25}{Gross:28}
+  2018-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
+  2020-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
+  2020-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+  2020-01-01[Brand:Z][Country:Germany]{Net:25}{Gross:28}
   ```
 
   Below script selects all points with context type Country and Name UK OR France
 
-  `select [Country:UK][Country:France]`
+  `[Country:UK][Country:France]`
 
   and returns
 
   ```
-  2012-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
-  2014-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
-  2014-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
+  2018-01-01[Brand:X][Country:UK]{Net:12}{Tax:1}{Gross:13}
+  2020-01-01[Brand:X][Country:France]{Net:25}{Gross:28}
+  2020-01-01[Brand:Y][Country:France]{Net:25}{Tax:3}{Gross:28}
   ```
