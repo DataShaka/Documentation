@@ -16,4 +16,4 @@ For example:
 
 `filter {High}{Low} ~> group by year ~> calculate "{High}/{Low}" includes {Ratio}`
 
-> Note how the Hitch is not used in between calculate and includes. It is also not used at the end of the Beam.
+> Note how the Hitch `~>` is not used in between calculate and includes. It is also not used at the end of the Beam.
