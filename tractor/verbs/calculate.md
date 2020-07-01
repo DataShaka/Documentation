@@ -30,9 +30,9 @@ For instance, to calculate the ratio between Tax and Gross in a given dataset, s
 ## Syntax
 ```language-tractor
 	~> calculate 'FORMULA' includes chopstick ~>
-    ~> calculate 'FORMULA' returns chopstick ~>
+	~> calculate 'FORMULA' returns chopstick ~>
 ```
-Refers to the [Chopstick](../chopsticks.md) page to understand how to build them.
+Refer to the [Chopstick](../chopsticks.md) page to understand how to build them.
 
 ## Examples Using Calculate
 
