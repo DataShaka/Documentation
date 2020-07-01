@@ -17,8 +17,8 @@ Currently, only the tooling around the manipulation of data is available, so acq
 Because Tractor is 'data first' it has a different mental model from other programming languages. The fundamental assumption is that there is 'data to work on'. Whether that data is harvested from an API or is the result from a query from an internal store.
 
 The Tractor DSL is made up of: 
-- Tractor Beams
-- Data Packages
-- Verbs
-- Chopsticks
-- The Hitch
+- [Tractor Beams](tractorbeams.md)
+- [Data Packages](datapackages.md)
+- [Verbs](verbs.md)
+- [Chopsticks](chopsticks.md)
+- [The Hitch](hitch.md)
