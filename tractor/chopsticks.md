@@ -54,7 +54,7 @@ For example on the dataset:
 2018[Sport:Football][Country:Brazil][Even:World Cup]{Won:6}
 ```
 
-this script selects all points in 2020:
+Below script selects all points in 2020 only:
 
 `select 2020`
 
@@ -66,47 +66,47 @@ and returns
 
 Chopstick uses built-in functions to perform searches on alphanumerical content in the data. Here are the different ways in which a user can look for data:
 
-To look for context type 'Country' and context name 'Brazil' you use:
+    To look for context type 'Country' and context name 'Brazil' you use:
 
-`[Country:Brazil]`
+    `[Country:Brazil]`
 
-To look for context type 'Country' with any context name you use either:
+    To look for context type 'Country' with any context name you use either:
 
-`[Country:any()] or [Country:]`
+    `[Country:any()] or [Country:]`
 
-To look for context name 'Brazil' with any context you use:
+    To look for context name 'Brazil' with any context you use:
 
-`[:Brazil]`
+    `[:Brazil]`
 
-To look for context name 'Brazil' with any context you use eitehr:
+    To look for context name 'Brazil' with any context you use eitehr:
 
-`[:Brazil]` or [any():Brazil]`
+    `[:Brazil]` or [any():Brazil]`
 
-To look for any context type and any context names you use either:
+    To look for any context type and any context names you use either:
 
-`[any():any()] or [:]`
+    `[any():any()] or [:]`
 
-You can also use Regex to define your context chopstick.
+    You can also use Regex to define your context chopstick.
 
-To look for context type 'Country' with any context name starting with an 'F' you use:
+    To look for context type 'Country' with any context name starting with an 'F' you use:
 
-`[Country:regex('^F.*')]`
+    `[Country:regex('^F.*')]`
 
-To look for context name 'Brazil' with any context type starting by a 'C' you use:
+    To look for context name 'Brazil' with any context type starting by a 'C' you use:
 
-`[regex('^C.*'):Brazil]`
+    `[regex('^C.*'):Brazil]`
 
-To look for context type starting by a 'C' with any contex type you use either:
+    To look for context type starting by a 'C' with any contex type you use either:
 
-`[regex('^C.*'):any()] or [regex('^C.*'):]`
+    `[regex('^C.*'):any()] or [regex('^C.*'):]`
 
-To look for context name starting by 'B' with any context type you use either:
+    To look for context name starting by 'B' with any context type you use either:
 
-`[any():regex('^B.*')] or [:regex('^B.*')]`
+    `[any():regex('^B.*')] or [:regex('^B.*')]`
 
-To look for context types starting by 'C' associated with context name starting by 'B' you use:
+    To look for context types starting by 'C' associated with context name starting by 'B' you use:
 
-`[regex('^C.*'):regex('^B.*')]`
+    `[regex('^C.*'):regex('^B.*')]`
 
 #### Examples Using Context Fragments
 
@@ -174,29 +174,29 @@ To look for context types starting by 'C' associated with context name starting 
 
 Use can also use Chopstick's built-in functions to perform searches on Signals and Values. Here are the different ways in which a user can look for data:
 
-To look for all points with signal 'Net' associated with a value of 25 you use:
+    To look for all points with signal 'Net' associated with a value of 25 you use:
 
-`{Net:25}`
+    `{Net:25}`
 
-To look for all points with signal 'Net' associated with any value you use either:
+    To look for all points with signal 'Net' associated with any value you use either:
 
-`{Net:} or {Net:any()}`
+    `{Net:} or {Net:any()}`
 
-To look for all points with signal starting by 'Ne' associated with a value of 25 you use:
+    To look for all points with signal starting by 'Ne' associated with a value of 25 you use:
 
-`{regex('^Ne.*'):25}`
+    `{regex('^Ne.*'):25}`
 
-To look for all points with signal starting by 'Ne' associated with any value you use either:
+    To look for all points with signal starting by 'Ne' associated with any value you use either:
 
-`{regex('^Ne.*'):} or {regex('^Ne.*'):any()}`
+    `{regex('^Ne.*'):} or {regex('^Ne.*'):any()}`
 
-To look for all points with a value of 25, regardless of signal you use either:
+    To look for all points with a value of 25, regardless of signal you use either:
 
-`{:25} or {any():25}`
+    `{:25} or {any():25}`
 
-To look for all points you use either:
+    To look for all points you use either:
 
-`{:} or {any():any()}`
+    `{:} or {any():any()}`
 
 
 Examples Using Signal/Value Fragments
