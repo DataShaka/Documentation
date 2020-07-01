@@ -46,7 +46,7 @@ returns:
 
 ### Example 2: Inconsistent Signals
 
-Consider the dataset with an inconsistent shape (there are signals missing for Net and Tax and Gross):
+Consider the dataset with an inconsistent signals (there are signals missing for Net and Tax and Gross):
 
 ```language-katsu
 2020-01-01[Brand:Lipton][Product:Red Berry Tea]{Net:10}{Tax:2}{Gross:12}
