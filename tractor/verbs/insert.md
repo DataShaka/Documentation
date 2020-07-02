@@ -10,6 +10,8 @@ The  **insert** verb is used to add [Katsu](../../glossary.md#katsu) elements to
 ~> insert chopstick where chopstick~>
 ```
 
+Refer to the [Chopsticks](../chopsticks.md) page to learn how to build them.
+
 ## Examples
 
 ### Insert Context
