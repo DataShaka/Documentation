@@ -10,7 +10,7 @@ The data filtered out by **filter** is being 'thrown out' of the current data fl
 ## Syntax
 
 ```language-tractor
-	~> filter chopstick ~>  
+~> filter chopstick ~>  
 ```
 
 ## Examples Using Filter
