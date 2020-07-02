@@ -13,6 +13,8 @@ The data filtered out by **filter** is being 'thrown out' of the current data fl
 ~> filter chopstick ~>  
 ```
 
+Refer to the [Chopsticks](../chopsticks.md) page to learn how to build them.
+
 ## Examples Using Filter
 
 ### Example 1: Filter Points By Specified Year
