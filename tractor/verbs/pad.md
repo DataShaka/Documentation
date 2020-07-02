@@ -2,7 +2,7 @@
 
 ## Definition
 
-The **pad** verb inserts [default values](../../default.html) in a list of [Data package](../datapackages.md) by looking for missing points on the specified data set. The defualy values will only be inserted between the range of the existing data points.
+The **pad** verb inserts empty [Data package](../datapackages.md) in a list of [Data packages](../datapackages.md) by looking for missing points on the specified data set. The defualy values will only be inserted between the range of the existing data points.
 
 Using the pad verb is one way to make your data completely uniform. 
 
