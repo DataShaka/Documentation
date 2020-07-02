@@ -19,14 +19,14 @@ language-tractor
 ~> sort by time ~>
 ```
 
-- [Context type chopstick](../../chopstick.html#context) : [Country:], [Brand:][Country:], etc
+- [Context type chopstick](../chopsticks.md#contextfragment) : [Country:], [Brand:][Country:], etc
 
 ```
 language-tractor
 ~> sort by [Country:] ~>
 ```
 
-- [Signal type selector](../../chopstick.html#signal) : {Net:}, {Net:}{Tax:}
+- [Signal type selector](../chopsticks.md#signalvaluefragment) : {Net:}, {Net:}{Tax:}
 
 ```
 language-tractor
