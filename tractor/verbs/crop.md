@@ -11,6 +11,8 @@ The **crop** verb extracts a specified context and/or signals of data from [Data
 ~> crop chopstick ~>
 ```
 
+Refer to the [Chopsticks](../chopsticks.md) page to learn how to build them.
+
 ## Examples Using Crop
 
 ### Example 1: Crop by Context Type
