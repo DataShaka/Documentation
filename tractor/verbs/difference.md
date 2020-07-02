@@ -2,7 +2,7 @@
 
 ## Definition
 
-The **difference** verb gets the difference between the two data points with same context and signal signature in a list of [Data packages](../datapackages.md) or a single [Data package](../datapackages.md). The result is a [Data package](../datapackages.md).
+The **difference** verb gives us the difference between the signal values of two (consecutive) data points in a list of [Data packages](../datapackages.md) or a single [Data package](../datapackages.md). The result is a [Data package](../datapackages.md).
 
 Two methods of getting difference are currently available:
 
