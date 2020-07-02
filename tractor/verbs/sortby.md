@@ -2,7 +2,7 @@
 
 ## Definition
 
-The **sort** verb sorts data in a [Data package](../datapackages.md) by one or several criteria. The result is a [Data package](../datapackages.md). Standard alphabetical, chronological or numerical orders are used. 
+The **sort** verb sorts data in a [Data package](../datapackages.md) by one or several criteria. The result is a [Data package](../datapackages.md). Standard <!--alphabetical, chronological or -->numerical orders are used. 
 
 
 ## Syntax
@@ -11,9 +11,11 @@ The **sort** verb sorts data in a [Data package](../datapackages.md) by one or s
 ~> sort by OPTIONS ORDER~>
 ```
 
+
 Options:
 - time
 
+<!--
 ```
 language-tractor
 ~> sort by time ~>
@@ -32,15 +34,12 @@ language-tractor
 language-tractor
 ~> sort by {Net:}{Tax:} ~>
 ```
+-->
 
 Order
 - asc
 - desc
 
-```
-language-tractor
-~> sort by time asc ~>
-```
 
 ## Examples
 
@@ -113,6 +112,7 @@ returns
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
 ```
 
+<!--
 ### Example 3: Sort Points By Context Type
 
 The **sort** verb accepts a list of context types on which the sort operation is performed successively. 
@@ -263,3 +263,4 @@ the following would be returned:
 2020-01-03[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
 2019-01-02[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
 ```
+-->
