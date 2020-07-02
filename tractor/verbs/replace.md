@@ -50,7 +50,7 @@ results in
 #### Rename signals
 
 ```language-tractor
-	~> replace {Net:} with {Before Tax:} ~>
+~> replace {Net:} with {Before Tax:} ~>
 ```
 
 results in 
