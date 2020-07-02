@@ -13,7 +13,7 @@ Verbs that are currently available for manipulating data in Tractor are:
 
 - [Average](average.md)
 - [Calculate](calculate.md)
-<!--- [Count](count.md)-->
+- Count (**Planned**)
 - [Crop](crop.md)
 - [Crush](crush.md)
 - [Dedupe](dedupe.md)
