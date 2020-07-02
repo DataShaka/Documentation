@@ -21,7 +21,7 @@
     - [Katsu](glossary.md#katsu)
     - [Queries](glossary.md#queries)
     - [Calendars](glossary.md#calendars)
-    - Time Granularity
+    - [Time Granularity](calendars/timegranularity.md)
     - [Chopsticks](tractor/chopsticks.md)
     - [Tractor](glossary.md#tractor)
     - [Tractor Verbs](tractor/verbs/readme.md)
