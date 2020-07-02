@@ -1,5 +1,7 @@
 # Time Granularity
 
+This refers to the the level of the date and/or time.
+
 We have below time granularities that are being used throughout the system:
 
 |	Time Granularity| Representation of| Sample ISO8601 Date| Start| End|
