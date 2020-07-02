@@ -41,9 +41,9 @@ Refer to the [Chopstick](../chopsticks.md) page to understand how to build them.
 Take the following data set:
 
 ```language-katsu
-2014-01-01[Company:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}
-2014-01-01[Company:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}
-2014-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}{Gross:2}
+2020-01-01[Company:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}
+2020-01-01[Company:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}
+2020-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}{Gross:2}
 ```
 
 This script calculates the ratio between Tax and Gross and returns data for a new signal called Tax Ratio:
@@ -54,9 +54,9 @@ This script calculates the ratio between Tax and Gross and returns data for a ne
 resulting in
 
 ```language-katsu
-2014-01-01[Brand:Google][Country:UK]{Tax Ratio:0.05}
-2014-01-01[Brand:Microsoft][Country:France]{Tax Ratio:0.333333333}
-2014-02-01[Company:Google][Country:France][City:Paris]{Tax Ratio:0.5}
+2020-01-01[Brand:Google][Country:UK]{Tax Ratio:0.05}
+2020-01-01[Brand:Microsoft][Country:France]{Tax Ratio:0.333333333}
+2020-02-01[Company:Google][Country:France][City:Paris]{Tax Ratio:0.5}
 ```
 
 `returns` causes Tractor to only return the calculated result.
@@ -66,9 +66,9 @@ resulting in
 Take the following data set:
 
 ```language-katsu
-2014-01-01[Company:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}
-2014-01-01[Company:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}
-2014-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
+2020-01-01[Company:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}
+2020-01-01[Company:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}
+2020-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
 ```
 
 This script calculates the ratio between Tax and Gross and returns data for a new signal called Tax Ratio:
@@ -84,9 +84,9 @@ This will return an **error** as it is not possible to complete the calculation 
 Take the following data set:
 
 ```language-katsu
-2014-01-01[Company:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}
-2014-01-01[Company:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}
-2014-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}{Gross:2}
+2020-01-01[Company:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}
+2020-01-01[Company:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}
+2020-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}{Gross:2}
 ```
 
 This script calculates the ratio between Tax and Gross and includes data for a new signal called Tax Ratio within the dataset:
@@ -98,9 +98,9 @@ This script calculates the ratio between Tax and Gross and includes data for a n
 resulting in
 
 ```language-katsu
-2014-01-01[Brand:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}{Tax Ratio:0.05}
-2014-01-01[Brand:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}{Tax Ratio:0.333333333}
-2014-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}{Gross:2}{Tax Ratio:0.5}
+2020-01-01[Brand:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}{Tax Ratio:0.05}
+2020-01-01[Brand:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}{Tax Ratio:0.333333333}
+2020-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}{Gross:2}{Tax Ratio:0.5}
 ```
 
 >Note that the different here between `returns` and `includes` is that all of the original signals are kept for `includes` and not for `returns`.
@@ -110,9 +110,9 @@ resulting in
 Take the following data set:
 
 ```language-katsu
-2014-01-01[Company:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}
-2014-01-01[Company:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}
-2014-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
+2020-01-01[Company:Google][Country:UK]{Net:19}{Tax:1}{Gross:20}
+2020-01-01[Company:Microsoft][Country:France]{Net:6}{Tax:3}{Gross:9}
+2020-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
 ```
 
 This script calculates the ratio between Tax and Gross and returns data for a new signal called Tax Ratio:
@@ -124,9 +124,9 @@ This script calculates the ratio between Tax and Gross and returns data for a ne
 resulting in
 
 ```language-katsu
-2014-01-01[Brand:Google][Country:UK]{Tax Ratio:0.05}
-2014-01-01[Brand:Microsoft][Country:France]{Tax Ratio:0.333333333}
-2014-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
+2020-01-01[Brand:Google][Country:UK]{Tax Ratio:0.05}
+2020-01-01[Brand:Microsoft][Country:France]{Tax Ratio:0.333333333}
+2020-02-01[Company:Google][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
 ```
 
 `includes` causes Tractor to only return the calculated result for when there is data. When there is not sufficient data to complete the calculation, Tractor just returns the original data. In this case, the third Katsu datapoint is missing the signal/value for Gross so it has been impossible to complete the calculation.
