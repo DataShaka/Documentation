@@ -21,7 +21,9 @@
     - [Katsu](glossary.md#katsu)
     - [Queries](glossary.md#queries)
     - [Calendars](glossary.md#calendars)
+    - Time Granularity
     - [Tractor](glossary.md#tractor)
+    - [Tractor Verbs](tractor/verbs/readme.md)
     - [API Implementation](glossary.md#implementation)
 
 - [Routes](routes.md)
