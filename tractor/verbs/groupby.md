@@ -31,7 +31,7 @@ Take the following data set:
 This script, splits the data in 2-points buckets, regarless of time, context or signal by using:
 
 ```language-tractor
-	~> group by 2 ~>
+~> group by 2 ~>
 ```
 
 Tractor will create 3 [Data packages](../datapackages.md) consisting of 2 points and 1 [Data package](../datapackages.md) consisting of 1 point, respecting their original order in the data :
