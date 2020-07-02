@@ -8,7 +8,8 @@ The **group by** verb is used to group data from a [Data package](../datapackage
 ~> group by INTERVAL ~>
 ```
 
->Intervals: year, quarter, month, week, day, hour, minute, second, millisecond or digit
+> Intervals: year, quarter, month, week, day, hour, minute, second, millisecond or digit (for grouping based on number of buckets)
+> Refer to [Time Granularity](calendars/timegranularity.md) for more info about intervals.
 
 ## Examples Using Group By
 
@@ -18,7 +19,7 @@ With Tractor, a user can split data into buckets or group data over specified ti
 
 Take the following data set:
 
-~~~language-katsu
+```language-katsu
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
 2020-01-01[Brand:Samsung Galaxy][Country:Germany]{Net:10}{Tax:1}{Gross:11}
 2019-01-02[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
@@ -26,7 +27,7 @@ Take the following data set:
 2020-01-03[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
 2020-01-04[Brand:iPhone][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
 2020-01-04[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
-~~~
+```
 
 This script, splits the data in 2-points buckets, regarless of time, context or signal by using:
 
@@ -69,73 +70,73 @@ Tractor will create 3 [Data packages](../datapackages.md) consisting of 2 points
 
 Take the following data set:
 
-~~~language-katsu
+```language-katsu
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
 2020-01-01[Brand:Samsung Galaxy][Country:Germany]{Net:10}{Tax:1}{Gross:11}
 2019-01-02[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
 2020-01-03[Brand:iPhone][Country:UK]{Net:12}{Tax:1}{Gross:13}
 2020-01-03[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
 2020-03-04[Brand:iPhone][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
-~~~
+```
 
-This data is easily grouped by [year (or other standard time intervals)](../../time.html) with:
+This data is easily grouped by year (or other standard [Time Granularities](../../calendars/timegranularity.md)) with:
 
-~~~language-tractor
+```language-tractor
 ~> group by year ~>
-~~~
+```
 
 - Group 2019
 
-~~~language-katsu
+```language-katsu
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
 2019-01-02[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
-~~~
+```
 
 - Group 2020
 
-~~~language-katsu
+```language-katsu
 2020-01-01[Brand:Samsung Galaxy][Country:Germany]{Net:10}{Tax:1}{Gross:11}
 2020-01-03[Brand:iPhone][Country:UK]{Net:12}{Tax:1}{Gross:13}
 2020-01-03[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
 2020-03-04[Brand:iPhone][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
-~~~
+```
 
 ### Example 2: Grouping By Time (Months)
 
 Take the following data set:
 
-~~~language-katsu
+```language-katsu
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
 2020-01-01[Brand:Samsung Galaxy][Country:Germany]{Net:10}{Tax:1}{Gross:11}
 2019-01-02[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
 2020-01-03[Brand:iPhone][Country:UK]{Net:12}{Tax:1}{Gross:13}
 2020-01-03[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
 2020-03-04[Brand:iPhone][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
-~~~
+```
 
 This script groups the data into three months
 
-~~~language-tractor
+```language-tractor
 ~> group by 2 month ~>
-~~~
+```
 
 And results in the following two groups:
 
 - Group 1
 
-~~~language-katsu
+```language-katsu
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
 2019-01-02[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
 2020-01-01[Brand:Samsung Galaxy][Country:Germany]{Net:10}{Tax:1}{Gross:11}
 2020-01-03[Brand:iPhone][Country:UK]{Net:12}{Tax:1}{Gross:13}
 2020-01-03[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
-~~~
+```
 
 - Group 2
 
-~~~language-katsu
+```language-katsu
 2020-03-04[Brand:iPhone][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
-~~~
+```
 
 The logic as to why there are two groups is becuase the data is first grouped into monthly groups (Jan 2019, Jan 2020 and Mar 2020). The first two months (Jan 2019 and Jan 2020) are grouped together and the third month is put into a second group.
 
@@ -146,56 +147,66 @@ If you want to include months with no data into the groupings then you can use t
 
 Take the following data set:
 
-~~~language-katsu
+```language-katsu
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
 2020-01-01[Brand:Samsung Galaxy][Country:Germany]{Net:10}{Tax:1}{Gross:11}
 2019-01-01[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
 2020-01-01[Brand:iPhone][Country:UK]{Net:12}{Tax:1}{Gross:13}
 2020-01-01[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
 2020-03-01[Brand:iPhone][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
-~~~
+```
 
 Grouping the data by brand is done with:
 
-~~~language-tractor
+```language-tractor
 	~> group by [Brand] ~>
-~~~
+```
 
 - Bucket: Brand Samsung Galaxy
-~~~language-katsu
+
+```language-katsu
 2020-01-01[Brand:Samsung Galaxy][Country:Germany]{Net:10}{Tax:1}{Gross:11}
 2020-01-01[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
-~~~
+```
+
 - Bucket: Brand iPhone
-~~~language-katsu
+
+```language-katsu
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
 2019-01-01[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
 2020-01-01[Brand:iPhone][Country:UK]{Net:12}{Tax:1}{Gross:13}
 2020-03-01[Brand:iPhone][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
-~~~
+```
 
 and grouping the data by Brand and Country is done with:
 
-~~~language-tractor
-	~> group by [Brand][Country] ~>
-~~~
+```language-tractor
+~> group by [Brand][Country] ~>
+```
 
 - Bucket: Brand Samsung Galaxy, Country Germany
-~~~language-katsu
+
+```language-katsu
 2020-01-01[Brand:Samsung Galaxy][Country:Germany]{Net:10}{Tax:1}{Gross:11}
 2020-01-01[Brand:Samsung Galaxy][Country:France]{Net:25}{Tax:3}{Gross:28}
-~~~
+```
+
 - Bucket: Brand iPhone, Country Germany
-~~~language-katsu
+
+```language-katsu
 2019-01-01[Brand:iPhone][Country:Germany]{Net:10}{Tax:2}{Gross:12}
-~~~
+```
+
 - Bucket: Brand iPhone, Country UK
-~~~language-katsu
+
+```language-katsu
 2019-01-01[Brand:iPhone][Country:UK]{Net:12}{Tax:2}{Gross:14}
 2020-01-01[Brand:iPhone][Country:UK]{Net:12}{Tax:1}{Gross:13}
-~~~
+```
+
 - Bucket: Brand iPhone, Country France
-~~~language-katsu
+
+```language-katsu
 2020-03-01[Brand:iPhone][Country:France][City:Paris]{Before Tax:10}{Tax:1}{After Tax:12}
-~~~
+```
 -->
