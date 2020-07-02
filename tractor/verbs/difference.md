@@ -25,78 +25,53 @@ Options:
 
 ## Examples
 
-### Example 1: Get count of 
+### Example 1: Get absolute difference
 
 Take the following data set:
 
 ```language-katsu
 2019-01-01[Company:Microsoft][Country:Germany]{Net:10}{Tax:2}{Gross:12}
-2019-02-01[Company:Microsoft][Country:Germany]{Net:10}{Tax:2}{Gross:12}
-2019-03-01[Company:Microsoft][Country:Germany]{Net:10}{Tax:2}{Gross:12}
-2020-01-01[Company:Microsoft][Country:Germany]{Net:10}{Tax:2}{Gross:12}
-2020-02-01[Company:Microsoft][Country:Germany]{Net:10}{Tax:2}{Gross:12}
+2019-01-01[Company:Microsoft][Country:UK]{Net:11}{Tax:1}{Gross:11}
+2019-03-01[Company:Microsoft][Country:US]{Net:12}{Tax:3}{Gross:14}
+2020-01-01[Company:Microsoft][Country:Germany]{Net:12}{Tax:3}{Gross:15}
+2020-02-01[Company:Microsoft][Country:UK]{Net:10}{Tax:2}{Gross:12}
 ```
 
 This script get the number of data points:
 
 ```language-tractor
-~> count ~>
+~> difference absolute ~>
 ```
 
 and returns:
 
 ```language-katsu
-2019-01-01[Company:Microsoft][Country:Germany]{Net:30}{Tax:6}{Gross:36}
-2020-01-01[Company:Microsoft][Country:Germany]{Net:20}{Tax:4}{Gross:24}
+2020-01-01T00:00:00.000[Company:Microsoft][Country:Germany]{absolute difference of Gross:3}{absolute difference of Net:2}{absolute difference of Tax:1}
+2020-02-01T00:00:00.000[Company:Microsoft][Country:UK]{absolute difference of Gross:1}{absolute difference of Net:-1}{absolute difference of Tax:1}
 ```
 
 
-### Example 2: Get unique count of
+### Example 2: Get percentage difference
 
 Take the following data set:
 
 ```language-katsu
 2019-01-01[Company:Microsoft][Country:Germany]{Net:10}{Tax:2}{Gross:12}
-2020-01-01[Company:Google][Country:Germany]{Net:10}{Tax:2}{Gross:12}
-2019-01-01[Company:Microsoft][Country:UK]{Net:10}{Tax:2}{Gross:12}
-2020-01-01[Company:Microsoft][Country:UK]{Net:10}{Tax:2}{Gross:12}
-2020-01-01[Company:Google][Country:France]{Net:10}{Tax:2}{Gross:12}
+2019-01-01[Company:Microsoft][Country:UK]{Net:11}{Tax:1}{Gross:11}
+2019-03-01[Company:Microsoft][Country:US]{Net:12}{Tax:3}{Gross:14}
+2020-01-01[Company:Microsoft][Country:Germany]{Net:12}{Tax:3}{Gross:15}
+2020-02-01[Company:Microsoft][Country:UK]{Net:10}{Tax:2}{Gross:12}
 ```
 
 The following script, groups the data points by company and then sums the values for each group:
 
 ```language-tractor
-~> group by [Comapny:] ~> sum ~>
+~> difference percentage ~>
 ```
 
 and returns:
 
 ```language-katsu
-2019-01-01[Company:Microsoft]{Net:30}{Tax:6}{Gross:36}
-2020-01-01[Company:Google]{Net:20}{Tax:4}{Gross:24}
-```
-
-### Example 3: get unique count of specified chopstick
-
-Take the following data set:
-
-```language-katsu
-2019-01-01[Company:Microsoft][Country:Germany]{Net:10}{Tax:2}{Gross:12}
-2020-01-01[Company:Google][Country:Germany]{Net:10}{Gross:12}
-2019-01-01[Company:Microsoft][Country:UK]{Net:10}{Tax:2}
-2020-01-01[Company:Microsoft][Country:UK]{Tax:2}{Gross:12}
-2020-01-01[Company:Google][Country:France]{Net:10}{Tax:2}{Gross:12}
-```
-
-The following script, groups the datapoints by company and then sums the values for each group:
-
-```language-tractor
-~> group by [Company:] ~> sum ~>
-```
-
-and returns:
-
-```language-katsu
-2019-01-01[Company:Microsoft]{Net:20}{Tax:6}{Gross:24}
-2020-01-01[Company:Google]{Net:20}{Tax:2}{Gross:24}
+2020-01-01T00:00:00.000[Company:Microsoft][Country:Germany]{percentage difference of Gross:0.25}{percentage difference of Net:0.2}{percentage difference of Tax:0.5}
+2020-02-01T00:00:00.000[Company:Microsoft][Country:UK]{percentage difference of Gross:0.09090909090909091}{percentage difference of Net:-0.09090909090909091}{percentage difference of Tax:1}
 ```
