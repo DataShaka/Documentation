@@ -19,14 +19,14 @@ Verbs that are currently available for manipulating data in Tractor are:
 - [Dedupe](dedupe.md)
 - [Difference](difference.md)
 - [Filter](filter.md)
-- [Group by](groupby.md)
+- [Group By](groupby.md)
 - [Insert](insert.md)
 - [Limit](limit.md)
 - [Pad](pad.md)
 - [Rank](rank.md)
 - [Replace](replace.md)
-- [Roll by](rollby.md)
-- [Sort by](sortby.md)
+- [Roll By](rollby.md)
+- [Sort By](sortby.md)
 - [Sum](sum.md)
 
 
