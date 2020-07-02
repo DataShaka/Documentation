@@ -16,7 +16,7 @@ are supported along with all of [these](https://ncalc.codeplex.com/wikipage?titl
 For instance, to calculate the ratio between Tax and Gross in a given dataset, simply write:
 
 ```language-tractor
-	~> calculate '{Tax:}/{Gross:}' returns {Tax Ratio}
+~> calculate '{Tax:}/{Gross:}' returns {Tax Ratio}
 ```
 
 ### Using Keywords
@@ -29,8 +29,8 @@ For instance, to calculate the ratio between Tax and Gross in a given dataset, s
 
 ## Syntax
 ```language-tractor
-	~> calculate 'FORMULA' includes chopstick ~>
-	~> calculate 'FORMULA' returns chopstick ~>
+~> calculate 'FORMULA' includes chopstick ~>
+~> calculate 'FORMULA' returns chopstick ~>
 ```
 Refer to the [Chopstick](../chopsticks.md) page to understand how to build them.
 
@@ -48,7 +48,7 @@ Take the following data set:
 
 This script calculates the ratio between Tax and Gross and returns data for a new signal called Tax Ratio:
 ```language-tractor
-	~> calculate '{Tax:}/{Gross:}' returns {Tax Ratio}
+~> calculate '{Tax:}/{Gross:}' returns {Tax Ratio}
 ```
 
 resulting in
@@ -74,7 +74,7 @@ Take the following data set:
 This script calculates the ratio between Tax and Gross and returns data for a new signal called Tax Ratio:
 
 ```language-tractor
-	~> calculate '{Tax:}/{Gross:}' returns {Tax Ratio}
+~> calculate '{Tax:}/{Gross:}' returns {Tax Ratio}
 ```
 
 This will return an **error** as it is not possible to complete the calculation if there is missing data (No Gross Signal/Value in the third Katsu datapoint).
@@ -92,7 +92,7 @@ Take the following data set:
 This script calculates the ratio between Tax and Gross and includes data for a new signal called Tax Ratio within the dataset:
 
 ```language-tractor
-	~> calculate '{Tax:}/{Gross:}' includes {Tax Ratio}
+~> calculate '{Tax:}/{Gross:}' includes {Tax Ratio}
 ```
 
 resulting in
@@ -118,7 +118,7 @@ Take the following data set:
 This script calculates the ratio between Tax and Gross and returns data for a new signal called Tax Ratio:
 
 ```language-tractor
-	~> calculate '{Tax:}/{Gross:}' inlcudes {Tax Ratio}
+~> calculate '{Tax:}/{Gross:}' inlcudes {Tax Ratio}
 ```
 
 resulting in
