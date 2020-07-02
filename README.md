@@ -22,6 +22,7 @@
     - [Queries](glossary.md#queries)
     - [Calendars](glossary.md#calendars)
     - Time Granularity
+    - [Chopsticks](tractor/chopsticks.md)
     - [Tractor](glossary.md#tractor)
     - [Tractor Verbs](tractor/verbs/readme.md)
     - [API Implementation](glossary.md#implementation)
