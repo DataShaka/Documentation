@@ -1,8 +1,8 @@
-#Rank
+# Rank
 
-##Definition
+## Definition
 
-The **rank** verb returns the rank of a signal across the given context type within a [Data package](../../package.html) for each time point.
+The **rank** verb returns the rank of a signal across the given context type within a [Data package](../datapackages.md) for each time point.
 
 Two methods of ranking are currently available:
 
@@ -15,146 +15,152 @@ The first point in the set is always ranked as 1.
 The resulting signal is automatically named by concatenating "Rank" to the original signal name and adding the context type by which the data is ranked e.g. "Price" would generate a new signal named "Price Rank by Brand".
 
 
-##Syntax
-<script type="text/javascript">
-Diagram(
-OneOrMore(NonTerminal('DATA PACKAGE')),
-Terminal('~>'),
-    Terminal('rank'),
-	Choice(0,
-  	Terminal('standard'),Terminal('olympic')),
-Choice(0,
-  NonTerminal('[Context Type]')
-),
-Terminal('~>'),
-OneOrMore(NonTerminal('DATA PACKAGE'))
-).addTo();
-</script>
+## Syntax
 
 ```language-tractor
 ~> rank METHOD [Context Type] ~>
 ```
+
 Options:
 
 - [Context Type] : the name of the context type on which the rank is performed.
 - METHOD : 'standard' or 'olympic' or 'competition'. If not provided, the default is 'standard'.
 
 
-##Examples
+## Examples
 
-###Example 1: Ranking Data Across A Given Context Type
+### Example 1: Ranking Data Across A Given Context Type
 
 Take the following data set:
 
 ```language-katsu
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:30}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:30}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
 ```
+
 The following Tractor script:
 
 ```language-tractor
 ~> rank standard [Brand] ~>
 ```
+
 or
+
 ```language-tractor
 ~> rank [Brand] ~>
 ```
+
 returns:
+
 ```language-katsu
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:30}{Signal Rank by Brand:1}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:2}
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:3}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:30}{Signal Rank by Brand:1}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:2}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:3}
 ```
 
-###Example 2: Ranking Across A Given Context Type With Several Time Points
+### Example 2: Ranking Across A Given Context Type With Several Time Points
 
 Take the following data set:
 
 ```language-katsu
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:30}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
-2011-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}
-2011-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}
-2011-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:300}
+2019-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
+2019-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:30}
+2019-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:300}
 ```
+
 The following Tractor script:
+
 ```language-tractor
 ~> rank standard [Brand] ~>
 ```
+
 or
+
 ```language-tractor
 ~> rank [Brand] ~>
 ```
+
 returns
+
 ```language-katsu
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:30}{Signal Rank by Brand:1}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:2}
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:3}
-2011-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:300}{Signal Rank by Brand:1}
-2011-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:2}
-2011-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}{Signal Rank by Brand:3}
+2019-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:30}{Signal Rank by Brand:1}
+2019-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:2}
+2019-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:3}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:300}{Signal Rank by Brand:1}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:2}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}{Signal Rank by Brand:3}
 ```
 
-###Example 3: Olympic Ranking By Context Type
+### Example 3: Olympic Ranking By Context Type
 
 Take the following data set:
 
 ```language-katsu
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}
-2010-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}
+2020-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}
 ```
+
 The following Tractor script:
+
 ```language-tractor
 ~> rank olympic [Brand] ~>
 ```
+
 returns
+
 ```language-katsu
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:1}
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}{Signal Rank by Brand:2}
-2010-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}{Signal Rank by Brand:3}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:1}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}{Signal Rank by Brand:2}
+2020-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}{Signal Rank by Brand:3}
 ```
 
-###Example 3: Competition Ranking By Context Type
+### Example 3: Competition Ranking By Context Type
 
 Take the following data set:
 
 ```language-katsu
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
-2010-01-01[Brand:HSBC][Subgroup:Male][Metric:Awareness]{Signal:5}
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}
-2010-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}
+2020-01-01[Brand:HSBC][Subgroup:Male][Metric:Awareness]{Signal:5}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}
+2020-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}
 ```
+
 The following Tractor script:
+
 ```language-tractor
 ~> rank competition [Brand] ~>
 ```
+
 returns
+
 ```language-katsu
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:1}
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
-2010-01-01[Brand:HSBC][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:4}
-2010-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
-2010-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
-2010-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}{Signal Rank by Brand:3}
-2010-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}{Signal Rank by Brand:4}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Awareness]{Signal:20}{Signal Rank by Brand:1}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:2}
+2020-01-01[Brand:HSBC][Subgroup:Male][Metric:Awareness]{Signal:10}{Signal Rank by Brand:4}
+2020-01-01[Brand:Halifax][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
+2020-01-01[Brand:Santander][Subgroup:Male][Metric:Consideration]{Signal:200}{Signal Rank by Brand:1}
+2020-01-01[Brand:Barclays][Subgroup:Male][Metric:Consideration]{Signal:100}{Signal Rank by Brand:3}
+2020-01-01[Brand:RBS][Subgroup:Male][Metric:Consideration]{Signal:50}{Signal Rank by Brand:4}
 ```
 
-###Things To Note With Rank
+### Things To Note With Rank
 
-You can only rank a dataset by **one** context type only. 
+You can only rank a dataset by **one** context type only.
