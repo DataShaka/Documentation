@@ -8,7 +8,7 @@ The **group by** verb is used to group data from a [Data package](../datapackage
 ~> group by INTERVAL ~>
 ```
 
->Intervals: year, quarter, month, week,day, hour, minute, second, millisecond or digit
+>Intervals: year, quarter, month, week, day, hour, minute, second, millisecond or digit
 
 ## Examples Using Group By
 
@@ -34,7 +34,7 @@ This script, splits the data in 2-points buckets, regarless of time, context or 
 	~> group by 2 ~>
 ```
 
-Tractor will create 3 [Data packages](../datapackages.md) consisting of 2 points, respecting their original order in the data :
+Tractor will create 3 [Data packages](../datapackages.md) consisting of 2 points and 1 [Data package](../datapackages.md) consisting of 1 point, respecting their original order in the data :
 
 - Group 1
 
