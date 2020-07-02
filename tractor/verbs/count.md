@@ -4,6 +4,12 @@
 
 The **count** verb counts the number of data points in a list [Data packages](../datapackages.md) or a single [Data package](../datapackages.md). The result is a [Data package](../datapackages.md).
 
+The resulting signal is automatically named by concatenating below words to the original signal name, depending on the case:
+
+- "count of " for e.g. "count of Gross"
+- "count of unique " for e.g. "count of unique Gross"
+- "count of chopstick" for e.g. "count of 2019-02-01[Company:Microsoft][Country:Germany]{Net:10}"
+- "count of unique chopstick" for e.g. "count of unique 2019-02-01[Company:Microsoft][Country:Germany]{Net:10}"
 
 ## Syntax
 
