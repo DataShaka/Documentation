@@ -1,6 +1,10 @@
+# Tractor
+
+Tractor is a modern data orchestration scripting language designed to make data easier.
+
 # The Tractor Mission
 
-Tractor embodies a new way of looking at data because it is designed to give a user the ability to 'do work' on data very easily. When doing work on data in the [Katsu](../glossary.md#katsu) format specifically, it offers control over the all the flexibility that [Katsu](../glossary.md#katsu) offers.
+Tractor embodies a new way of looking at data because it is designed to give a user the ability to 'do work' on data very easily. When doing work on data in the [Katsu](../katsu.md) format specifically, it offers control over the all the flexibility that [Katsu](../katsu.md) offers.
 
 The work that a user would want to do on a dataset can be grouped into three areas: manipulation, acquisition, delivery or MAD.
 
