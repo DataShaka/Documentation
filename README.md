@@ -1,5 +1,9 @@
 # DataShaka Platform
 
+## Overview
+
+## Elements
+
 ## Table of contents
 
 - [Principles](principles.md)
