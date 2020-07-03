@@ -6,6 +6,9 @@ The DataShaka Core API is a REST API with a Query and Response model. The respon
 
 ## Elements
 
+- [Katsu](katsu.md)
+
+
 ## Table of contents
 
 - [Principles](principles.md)
