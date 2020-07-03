@@ -13,7 +13,7 @@ The DataShaka Core API is a REST API with a Query and Response model. The respon
 ## Elements
 
 - [Katsu](katsu.md)
-- [Tractor](glossary.md#tractor)
+- [Tractor](tractor/README.md)
 - [Tractor Verbs](tractor/verbs/readme.md)
 - [Calendars](./principles.md#calendars)
 - [Time Granularity](calendars/timegranularity.md)
