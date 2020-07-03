@@ -12,8 +12,5 @@ We chose ISO8601 (as opposed to [Excel date time numbers](http://excelribbon.tip
 
 #### Where Calendars are used
 
-	- Core API 
-		In the Core API calendars are used to 'expand' the dates given in [ISO8601](#iso8601) to fully granular 'time bounds' used to find the data required. Calendars for this purpose can only be specified in `POST` requests as part of the request body JSON document.
-
-	- Tractor
-		Tractor uses calendars to help it deal with time based operations. For example `group by "month"` uses a calendar to decide what `month` groupings look like. When Tractor is used in the CoreAPI the same calendar is used as is used for the query itself.
+- Core API : In the Core API calendars are used to 'expand' the dates given in [ISO8601](#iso8601) to fully granular 'time bounds' used to find the data required. Calendars for this purpose can only be specified in `POST` requests as part of the request body JSON document.
+- Tractor : Tractor uses calendars to help it deal with time based operations. For example `group by "month"` uses a calendar to decide what `month` groupings look like. When Tractor is used in the CoreAPI the same calendar is used as is used for the query itself.
