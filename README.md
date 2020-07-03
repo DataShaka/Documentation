@@ -2,7 +2,7 @@
 
 DataShaka is a data management platform comprising of multiple elements that support the management and manipulation of time-series data. Presently accessed as a managed service, these pages provide data professionals with an understanding of the components and capabilities of the platform. The roadmap includes provision for self-service access to some of these elements.
 
-As a service DataShaka provides REST APIs to access the underlying capabilities, names as Core API, with a Query and Response model. The response is standard HTTP, so constitutes a stream of data. As a REST API the functionally is described in terms of routes (queries with parameters that will either be GET or POST) and responses that are in the form of streamed documents.
+As a service DataShaka provides REST APIs to access the underlying capabilities, named as Core API, with a Query and Response model. The response is standard HTTP, so constitutes a stream of data. As a REST API the functionally is described in terms of routes (queries with parameters that will either be GET or POST) and responses that are in the form of streamed documents.
 
 - All routes are available under the base sub-domain https://api.datashaka.com/
 - All routes require HTTPS encryption.
