@@ -20,9 +20,9 @@ The DataShaka Core API is a REST API with a Query and Response model. The respon
 - [Chopsticks](tractor/chopsticks.md)
 
 
-- [Routes](routes.md)
+# Routes
 
-    - [Discovery Route](/routes/discovery.md)
-    - [Retrieval Route](/routes/retrieve.md)
-    - [Upsert Route](/routes/upsert.md)
-    - Orchestration Route (***Planned***)
+- [Discovery Route](/routes/discovery.md)
+- [Retrieval Route](/routes/retrieve.md)
+- [Upsert Route](/routes/upsert.md)
+- Orchestration Route (***Planned***)
