@@ -19,7 +19,7 @@ The DataShaka Core API is a REST API with a Query and Response model. The respon
 - [Time Granularity](calendars/timegranularity.md)
 - [Chopsticks](tractor/chopsticks.md)
 
-# Routes
+## Routes
 
 - [Discovery Route](/routes/discovery.md)
 - [Retrieval Route](/routes/retrieve.md)
